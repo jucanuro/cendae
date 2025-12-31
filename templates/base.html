@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CENDAE | Especialización en Análisis Estadístico{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cendaeRed: '#E31E24',
+                        cendaeNavy: '#0b0c10',
+                        cendaeGray: '#F9FAFB',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; }
+        
+        /* Estilo para el menú desplegable */
+        .group:hover .dropdown-content { 
+            opacity: 1; 
+            visibility: visible; 
+            transform: translateY(0);
+        }
+        .dropdown-content {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="text-cendaeNavy flex flex-col min-h-screen">
+
+    {% include 'header.html' %}
+ 
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include 'footer.html' %}
+    
+
+</body>
+</html>

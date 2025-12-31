@@ -1,0 +1,89 @@
+<section id="validador" class="relative py-4 lg:py-4 bg-white overflow-hidden">
+    <div class="absolute top-1/2 left-0 w-full h-[1px] bg-gray-100 -z-0"></div>
+    <div class="absolute top-0 left-1/4 w-[1px] h-full bg-gray-100 -z-0"></div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="bg-[#001A3D] rounded-[4rem] p-8 lg:p-24 flex flex-col lg:flex-row items-center gap-20 shadow-[0_50px_100px_-20px_rgba(0,26,61,0.3)] relative overflow-hidden">
+            
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#e5142d]/10 rounded-full blur-[100px]"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px]"></div>
+
+            <div class="lg:w-1/2 text-white">
+                <div class="inline-flex items-center gap-3 bg-white/5 border border-white/10 px-5 py-2 rounded-full mb-8">
+                    <span class="flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-green-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+                    </span>
+                    <span class="text-[10px] font-black uppercase tracking-[0.4em] text-white/70">Blockchain Verified v2.0</span>
+                </div>
+
+                <h2 class="text-6xl lg:text-7xl font-black tracking-tighter leading-[0.9] mb-8">
+                    Autenticidad <br>
+                    <span class="text-[#e5142d] italic font-light">Garantizada.</span>
+                </h2>
+
+                <p class="text-white/50 text-lg font-medium max-w-sm mb-10 leading-relaxed">
+                    Nuestro sistema de validación cruzada asegura que cada certificación CENDAE sea única, inalterable y reconocida globalmente.
+                </p>
+
+                <div class="grid grid-cols-2 gap-8 border-t border-white/10 pt-10">
+                    <div>
+                        <p class="text-[#e5142d] font-black text-2xl mb-1">AES-256</p>
+                        <p class="text-[9px] font-black uppercase tracking-widest text-white/40">Encriptación de Grado Militar</p>
+                    </div>
+                    <div>
+                        <p class="text-white font-black text-2xl mb-1">QR-Secure</p>
+                        <p class="text-[9px] font-black uppercase tracking-widest text-white/40">Escaneo Instantáneo</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 w-full">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-[#e5142d] to-blue-600 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    
+                    <div class="relative bg-[#00142d] p-10 lg:p-14 rounded-[3rem] border border-white/10 shadow-2xl">
+                        <div class="mb-10 text-center">
+                            <div class="w-20 h-20 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/10">
+                                <svg class="w-10 h-10 text-[#e5142d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04kM12 21.75c-2.676 0-5.216-.584-7.499-1.632A11.905 11.905 0 0112 11.25c2.676 0 5.216.584 7.499 1.632z"></path>
+                                </svg>
+                            </div>
+                            <p class="text-white font-black uppercase tracking-[0.2em] text-sm">Panel de Verificación</p>
+                            <p class="text-white/30 text-[10px] uppercase font-bold mt-1">Ingrese el ID único del diploma</p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="relative">
+                                <input type="text" 
+                                    placeholder="EJ: CND-8829-2025" 
+                                    class="w-full bg-white/5 border border-white/10 px-8 py-6 rounded-2xl text-xl font-black text-white outline-none focus:border-[#e5142d] focus:bg-white/10 transition-all placeholder:text-white/10 text-center tracking-widest uppercase">
+                            </div>
+                            
+                            <button class="w-full group relative overflow-hidden bg-[#e5142d] text-white py-6 rounded-2xl font-black uppercase text-xs tracking-[0.3em] transition-all hover:shadow-[0_0_40px_rgba(229,20,45,0.4)] active:scale-[0.98]">
+                                <span class="relative z-10">Validar Credenciales</span>
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                            </button>
+                        </div>
+
+                        <div class="mt-8 flex justify-center gap-4">
+                            <div class="flex -space-x-2">
+                                <div class="w-6 h-6 rounded-full bg-green-500/20 border border-green-500/50 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                                </div>
+                                <div class="w-6 h-6 rounded-full bg-blue-500/20 border border-blue-500/50"></div>
+                            </div>
+                            <p class="text-[9px] font-bold text-white/20 uppercase tracking-tighter self-center">Sistema de auditoría activa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes shimmer {
+        100% { transform: translateX(100%); }
+    }
+</style>

@@ -1,0 +1,95 @@
+<section class="relative min-h-screen flex items-center bg-white overflow-hidden pt-20">
+    
+    <div class="absolute -top-20 -left-20 w-[600px] h-[600px] border border-dashed border-slate-200 rounded-full pointer-events-none opacity-40"></div>
+    <div class="absolute -top-40 -left-40 w-[900px] h-[900px] border border-slate-100 rounded-full pointer-events-none"></div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col lg:grid lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-8 lg:pl-32 xl:pl-48 pt-10">
+                
+                <div class="inline-flex items-center gap-3 mb-8 bg-slate-50 px-4 py-2 rounded-full border border-slate-100">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e5142d] opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-[#e5142d]"></span>
+                    </span>
+                    <span class="text-[#001A3D] text-[10px] font-black uppercase tracking-[0.4em]">
+                        Future of Data Intelligence
+                    </span>
+                </div>
+
+                <h1 class="text-[9vw] lg:text-[80px] font-black text-[#001A3D] leading-[0.85] tracking-[-0.06em] mb-12">
+                    <span class="text-slate-200">REDISEÑA</span> <br>
+                    <span class="text-[#e5142d] italic font-light tracking-tighter">TU MENTE</span> <br>
+                    <span class="relative">
+                        CIENTÍFICA
+                        <div class="absolute -right-12 top-1/2 w-24 h-[2px] bg-[#001A3D] hidden xl:block"></div>
+                    </span>
+                </h1>
+
+                <div class="flex flex-col sm:flex-row gap-10 items-start">
+                    <div class="max-w-[280px]">
+                        <p class="text-slate-400 text-[11px] font-bold leading-relaxed uppercase tracking-[0.2em]">
+                            Arquitectura de datos bajo <br>
+                            <span class="text-[#001A3D]">estándares globales</span> de la <br>
+                            industria tecnológica.
+                        </p>
+                    </div>
+
+                    <a href="#cursos" class="group relative w-24 h-24 flex items-center justify-center">
+                        <svg class="absolute w-full h-full animate-[spin_10s_linear_infinite]" viewBox="0 0 100 100">
+                            <defs>
+                                <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+                            </defs>
+                            <text class="text-[10px] font-black uppercase tracking-[0.2em] fill-slate-300">
+                                <textPath xlink:href="#circlePath">SCROLL • EXPLORE • PROGRAMAS •</textPath>
+                            </text>
+                        </svg>
+                        <div class="w-12 h-12 bg-[#001A3D] rounded-full flex items-center justify-center group-hover:bg-[#e5142d] transition-all duration-500 shadow-xl group-hover:scale-110">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 relative mt-16 lg:mt-0">
+                <div class="relative w-full aspect-[3/4] rounded-[40%_80%_40%_40%] overflow-hidden shadow-[60px_60px_100px_rgba(0,0,0,0.08)]">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000" 
+                         class="w-full h-full object-cover grayscale brightness-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#001A3D]/40 to-transparent"></div>
+                </div>
+
+                <div class="absolute -bottom-10 -right-6 bg-white/80 backdrop-blur-xl border border-white p-8 rounded-[2.5rem] shadow-2xl">
+                    <p class="text-[45px] font-black text-[#001A3D] leading-none mb-1">98%</p>
+                    <p class="text-[#e5142d] text-[9px] font-black uppercase tracking-widest">Global Success Rate</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.02] rotate-90 origin-right select-none pointer-events-none">
+        <h2 class="text-[15vw] font-black text-[#001A3D]">CENDAE</h2>
+    </div>
+</section>
+
+<style>
+    /* Estilos adicionales para elevar el diseño */
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;800&display=swap');
+
+    h1 {
+        text-shadow: 20px 20px 40px rgba(0,0,0,0.02);
+    }
+
+    /* Animación suave para la entrada del texto */
+    .container {
+        animation: heroReveal 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    @keyframes heroReveal {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
