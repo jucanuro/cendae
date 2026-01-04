@@ -1,0 +1,114 @@
+<div id="cursoModal" class="fixed inset-0 z-[200] hidden items-center justify-center p-6 md:p-12 lg:p-20 transition-all duration-500">
+    <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-md" onclick="closeModal()"></div>
+    
+    <div class="relative bg-white w-full max-w-5xl max-h-full flex flex-col md:flex-row z-10 overflow-hidden rounded-[2.5rem] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.2)] border border-white">
+        
+        <button onclick="closeModal()" 
+                class="absolute top-6 right-6 z-[70] w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 text-slate-400 hover:bg-[#e5142d] hover:text-white transition-all duration-500">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <div class="flex-[1.2] p-8 md:p-12 lg:p-16 bg-white overflow-y-auto custom-scrollbar relative">
+            <div class="flex items-center gap-3 mb-8">
+                <span id="modal-nivel" class="text-[9px] font-bold uppercase tracking-[0.3em] text-slate-400 border border-slate-100 px-3 py-1 rounded-full"></span>
+            </div>
+
+            <h2 id="modal-titulo" class="text-xl md:text-2xl font-extrabold text-[#001A3D] tracking-tighter leading-tight mb-8"></h2>
+            
+            <div class="space-y-10">
+                <div class="relative pl-6">
+                    <div class="absolute left-0 top-0 w-1 h-1 rounded-full bg-[#e5142d]"></div>
+                    <div id="modal-descripcion" class="text-sm md:text-base text-slate-500 font-medium leading-relaxed italic serif"></div>
+                </div>
+
+                <div class="space-y-4">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-300">Programa Académico</p>
+                    <div id="modal-temario" class="grid grid-cols-1 gap-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-1 bg-slate-50/50 p-8 md:p-10 flex flex-col relative rounded-t-[3rem] md:rounded-t-none md:rounded-l-[4rem] border-l border-white shadow-[-15px_0_30px_rgba(0,0,0,0.03)]">
+            
+            <div class="relative mb-8 self-center w-full max-w-[280px]">
+                <div class="bg-white p-2 rounded-[2rem] shadow-sm border border-slate-100">
+                    <img id="modal-portada" src="" class="w-full h-32 object-cover rounded-[1.5rem]">
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm mb-8 flex items-center gap-4">
+                <img id="modal-instructor-foto" src="" class="w-10 h-10 rounded-full object-cover grayscale border border-slate-50">
+                <div>
+                    <p id="modal-instructor-nombre" class="font-bold text-[#001A3D] text-[12px] leading-none"></p>
+                    <p id="modal-instructor-cargo" class="text-[8px] text-slate-400 font-bold uppercase tracking-widest mt-1"></p>
+                </div>
+            </div>
+
+            <div class="space-y-3 mb-10 px-2">
+                <div class="flex items-center gap-3 text-[9px] font-bold text-slate-400 uppercase tracking-wider">
+                    <svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    Certificación Oficial
+                </div>
+                <div class="flex items-center gap-3 text-[9px] font-bold text-slate-400 uppercase tracking-wider">
+                    <svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    Campus Virtual 24/7
+                </div>
+            </div>
+
+            <div class="mt-auto">
+                <div class="mb-4">
+                    <span class="text-[8px] font-black text-slate-300 uppercase tracking-[0.3em] block mb-1">Costo del Programa</span>
+                    <div id="modal-precio" class="text-3xl font-extrabold text-[#001A3D] tracking-tighter"></div>
+                </div>
+
+                <a id="modal-whatsapp" href="#" target="_blank" 
+                    class="group flex items-center justify-center gap-3 w-full bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-[10px] shadow-[0_15px_30px_-5px_rgba(37,211,102,0.4)] hover:shadow-[0_20px_40px_-5px_rgba(37,211,102,0.6)] hover:-translate-y-1 transition-all duration-500 active:scale-95 border border-white/20">
+                        
+                        <div class="relative flex items-center justify-center">
+                            <svg class="w-5 h-5 drop-shadow-md group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.661l.341.202c1.389.828 2.982 1.26 4.608 1.261h.001c5.398 0 9.791-4.393 9.794-9.792 0-2.612-1.017-5.067-2.862-6.913a9.742 9.742 0 00-6.915-2.863c-5.399 0-9.792 4.393-9.795 9.792-.001 1.73.456 3.419 1.32 4.904l.221.379-.879 3.21 3.29-.863z"/>
+                            </svg>
+                        </div>
+
+                        <span class="drop-shadow-sm">Consulta por WhatsApp</span>
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Cormorant+Garamond:ital,wght@1,500&display=swap');
+    
+    #cursoModal { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .serif { font-family: 'Cormorant Garamond', serif; }
+
+    /* Scrollbar minimalista */
+    .custom-scrollbar::-webkit-scrollbar { width: 3px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+
+    /* Animación de entrada: Flotado suave */
+    #cursoModal.flex {
+        animation: modalFloatIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes modalFloatIn {
+        from { opacity: 0; transform: translateY(20px) scale(0.98); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+</style>
+
+<script>
+function closeModal() {
+    const modal = document.getElementById('cursoModal');
+    if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+}
+</script>

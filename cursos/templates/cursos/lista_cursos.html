@@ -1,0 +1,228 @@
+{% load static %}
+<section id="cursos" class="relative py-24 bg-white overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/3 h-screen bg-slate-50/50 rounded-l-[10rem] -z-10 translate-x-1/2"></div>
+    
+    <div class="container mx-auto px-6 lg:px-20">
+        
+        <div class="relative mb-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+                <div class="max-w-3xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-8 h-[1px] bg-[#ff0022]"></span>
+                        <span class="text-[10px] font-extrabold uppercase tracking-[0.5em] text-[#ff0022]">Curated Knowledge</span>
+                    </div>
+                    <h2 class="text-6xl md:text-8xl font-light text-[#00112b] tracking-tight leading-[0.85]">
+                        Formación <span class="serif italic text-[#ff0022] font-normal">integral</span>
+                    </h2>
+                    <p class="mt-8 text-slate-400 text-sm md:text-base font-medium max-w-md leading-relaxed">
+                        Una colección de cursos diseñados para desarrollar criterio, dominio técnico
+                        y capacidad de adaptación, sin importar la disciplina.
+                        Aprendes conceptos que
+                        <span class="text-[#00112b] border-b border-[#ff0022]/30">se mantienen vigentes</span>.
+                    </p>
+
+                </div>
+                
+                <button onclick="openCatalogModal()" class="group flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-[#00112b] hover:text-[#ff0022] transition-colors">
+                    Explorar Catálogo ({{ cursos|length }})
+                    <span class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-[#ff0022] group-hover:bg-[#ff0022] group-hover:text-white transition-all duration-500">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {% for curso in cursos|slice:":4" %}
+            <div class="group cursor-pointer" onclick="cargarDetalleModal('{{ curso.slug }}')">
+                <div class="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-8 bg-slate-100 transition-all duration-700 group-hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] group-hover:-translate-y-4">
+                    <img src="{{ curso.portada.url }}" class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#00112b]/40"></div>
+                    
+                    <div class="absolute top-6 left-6">
+                        <span class="bg-white/90 backdrop-blur-md text-[#00112b] text-[8px] font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-sm">
+                            {{ curso.get_nivel_display }}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="px-2">
+                    <div class="flex items-center gap-3 mb-3 text-slate-300">
+                        <span class="text-[10px] font-bold">0{{ forloop.counter }}</span>
+                        <span class="w-4 h-[1px] bg-slate-200"></span>
+                        <span class="text-[9px] font-bold uppercase tracking-widest">{{ curso.instructor.nombre }}</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#00112b] leading-tight tracking-tight group-hover:text-[#ff0022] transition-colors duration-300">
+                        {{ curso.titulo }}
+                    </h3>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+</section>
+
+<div id="catalogModal" class="fixed inset-0 z-[150] hidden items-center justify-center p-4">
+    <div class="absolute inset-0 bg-[#00112b]/95 backdrop-blur-2xl" onclick="closeCatalogModal()"></div>
+    <div class="relative bg-white w-full max-w-6xl h-[85vh] rounded-[3rem] overflow-hidden flex flex-col shadow-2xl">
+        <div class="p-10 border-b border-slate-50 flex justify-between items-center bg-white">
+            <h2 class="text-3xl font-black text-[#00112b] tracking-tighter">TODOS LOS PROGRAMAS <span class="text-[#ff0022]">.</span></h2>
+            <button onclick="closeCatalogModal()" class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-red-50 hover:text-red-500 transition-all">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div class="flex-grow overflow-y-auto p-10 custom-scrollbar">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {% for curso in cursos %}
+                    <div class="flex gap-4 p-4 rounded-3xl hover:bg-slate-50 cursor-pointer transition-all" onclick="closeCatalogModal(); cargarDetalleModal('{{ curso.slug }}')">
+                        <img src="{{ curso.portada.url }}" class="w-20 h-20 rounded-2xl object-cover">
+                        <div>
+                            <p class="text-[9px] font-bold text-[#ff0022] uppercase tracking-widest mb-1">{{ curso.get_nivel_display }}</p>
+                            <h4 class="text-sm font-bold text-[#00112b] leading-snug">{{ curso.titulo }}</h4>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&family=Cormorant+Garamond:ital,wght@1,400&display=swap');
+
+    #cursos { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .serif { font-family: 'Cormorant Garamond', serif; }
+
+    /* Mejora de la legibilidad en fondo blanco */
+    .tracking-tight { letter-spacing: -0.025em; }
+    .tracking-tighter { letter-spacing: -0.05em; }
+
+    /* Custom Scrollbar para el catálogo */
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: white; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #f1f5f9; border-radius: 10px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #ff0022; }
+
+    /* Animación de apertura del catálogo */
+    #catalogModal.flex {
+        animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes slideUp {
+        from { transform: translateY(50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+</style>
+
+<script>
+    function cargarDetalleModal(slug) {
+        const modal = document.getElementById('cursoModal');
+        
+        fetch(`/cursos/api/curso/${slug}/`)
+            .then(response => response.json())
+            .then(data => {
+                const el = (id) => document.getElementById(id);
+                
+                // Actualización de Textos
+                el('modal-titulo').innerText = data.titulo;
+                el('modal-descripcion').innerText = data.descripcion;
+                el('modal-precio').innerText = `S/ ${data.precio}`;
+                el('modal-nivel').innerText = data.detalles.nivel;
+                el('modal-instructor-nombre').innerText = data.instructor.nombre;
+                el('modal-instructor-cargo').innerText = data.instructor.titulo;
+                el('modal-instructor-foto').src = data.instructor.foto;
+                el('modal-portada').src = data.portada || data.instructor.foto;
+
+                // WhatsApp 
+                const phone = "51948658726";
+                const msg = encodeURIComponent(`Hola, solicito el syllabus completo del curso: ${data.titulo}`);
+                el('modal-whatsapp').href = `https://wa.me/${phone}?text=${msg}`;
+
+                // TEMARIO (Diseño mejorado de acordeones circulares)
+                const container = el('modal-temario');
+                container.innerHTML = data.temario.map((modulo, idx) => `
+                    <div class="accordion-item group/item border-b border-slate-100 last:border-0 bg-white transition-all duration-500 hover:bg-slate-50/50">
+                        <div onclick="toggleAccordion(this)" 
+                            class="py-6 flex justify-between items-center cursor-pointer px-4 md:px-0 transition-all duration-300">
+                            <div class="flex items-center gap-6">
+                                <div class="relative flex items-center justify-center">
+                                    <div class="w-10 h-10 rounded-full border-2 border-slate-100 flex items-center justify-center text-[11px] font-black text-slate-300 group-hover/item:border-[#ff0022] group-hover/item:text-[#ff0022] group-hover/item:scale-110 transition-all duration-500 shadow-sm bg-white">
+                                        0${idx + 1}
+                                    </div>
+                                    <div class="absolute inset-0 rounded-full bg-[#ff0022] opacity-0 group-hover/item:opacity-20 group-hover/item:animate-ping -z-10"></div>
+                                </div>
+                                <div>
+                                    <h4 class="text-[9px] font-black uppercase tracking-[0.3em] text-[#ff0022] mb-1">Módulo Estratégico</h4>
+                                    <p class="font-extrabold text-[10px] md:text-[12px] text-[#00112b] tracking-tight group-hover/item:translate-x-1 transition-transform duration-300">${modulo.titulo}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="icon-chevron w-9 h-9 rounded-full flex items-center justify-center transition-all duration-500 bg-[#00112b] text-white shadow-lg group-hover/item:bg-[#ff0022] group-hover/item:rotate-90">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 6v12m6-6H6"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]">
+                            <div class="pl-[64px] pr-4 pb-10 relative">
+                                <div class="absolute left-[39px] top-0 w-[2px] h-full bg-gradient-to-b from-[#ff0022] via-slate-100 to-transparent opacity-40"></div>
+                                
+                                <div class="space-y-5 mt-4">
+                                    ${modulo.lecciones.map(lec => `
+                                        <div class="flex items-center gap-4 group/lec cursor-default transform hover:translate-x-2 transition-transform duration-300">
+                                            <div class="w-2 h-2 rounded-full bg-[#00112b]/10 border border-slate-200 group-hover/lec:bg-[#ff0022] group-hover/lec:border-[#ff0022] group-hover/lec:scale-125 transition-all duration-300 shadow-sm"></div>
+                                            <span class="text-[12px] font-semibold text-slate-500 group-hover/lec:text-[#00112b] transition-colors tracking-tight">${lec}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            });
+    }
+
+    function toggleAccordion(element) {
+        const content = element.nextElementSibling;
+        const icon = element.querySelector('.icon-chevron');
+        
+        // Cerrar otros para que el modal no se haga gigante
+        document.querySelectorAll('.accordion-content').forEach(other => {
+            if (other !== content && other.style.maxHeight) {
+                other.style.maxHeight = null;
+                other.parentElement.querySelector('.icon-chevron').style.transform = 'rotate(0deg)';
+            }
+        });
+
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            icon.style.transform = 'rotate(0deg)';
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.style.transform = 'rotate(45deg)'; // El + gira y se vuelve una X de cierre
+        }
+    }
+
+    function openCatalogModal() {
+        const modal = document.getElementById('catalogModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCatalogModal() {
+        const modal = document.getElementById('catalogModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        if (!document.getElementById('cursoModal').classList.contains('flex')) {
+            document.body.style.overflow = 'auto';
+        }
+    }
+</script>
+
