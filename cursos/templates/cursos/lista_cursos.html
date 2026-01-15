@@ -1,228 +1,315 @@
 {% load static %}
-<section id="cursos" class="relative py-24 bg-white overflow-hidden">
-    <div class="absolute top-0 right-0 w-1/3 h-screen bg-slate-50/50 rounded-l-[10rem] -z-10 translate-x-1/2"></div>
+<section id="cursos" class="relative py-32 bg-white overflow-hidden font-['Plus_Jakarta_Sans',_sans-serif]">
     
-    <div class="container mx-auto px-6 lg:px-20">
-        
-        <div class="relative mb-24">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
-                <div class="max-w-3xl">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="w-8 h-[1px] bg-[#ff0022]"></span>
-                        <span class="text-[10px] font-extrabold uppercase tracking-[0.5em] text-[#ff0022]">Curated Knowledge</span>
-                    </div>
-                    <h2 class="text-6xl md:text-8xl font-light text-[#00112b] tracking-tight leading-[0.85]">
-                        Formación <span class="serif italic text-[#ff0022] font-normal">integral</span>
-                    </h2>
-                    <p class="mt-8 text-slate-400 text-sm md:text-base font-medium max-w-md leading-relaxed">
-                        Una colección de cursos diseñados para desarrollar criterio, dominio técnico
-                        y capacidad de adaptación, sin importar la disciplina.
-                        Aprendes conceptos que
-                        <span class="text-[#00112b] border-b border-[#ff0022]/30">se mantienen vigentes</span>.
-                    </p>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(#00112b_0.5px,transparent_0.5px)] [background-size:32px_32px] opacity-[0.03]"></div>
 
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-gradient-to-br from-slate-100 to-transparent rounded-full opacity-50 blur-3xl"></div>
+        
+        <div class="absolute bottom-[-10%] right-[-5%] w-[40%] h-[500px] bg-[#00112b]/[0.02] -rotate-12 translate-y-20" 
+             style="clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);"></div>
+
+        <div class="absolute bottom-20 left-[10%] w-32 h-[400px] border border-slate-200/50 rounded-full rotate-[35deg] opacity-30"></div>
+        
+        <div class="absolute bottom-40 right-[15%] w-12 h-24 bg-[#ff0022]/10 rotate-[15deg]"
+             style="clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        
+        <div class="relative mb-24 flex flex-col md:flex-row justify-between items-end gap-12">
+            <div class="max-w-2xl">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-[#ff0022] animate-pulse"></span>
+                    <span class="text-[10px] font-black uppercase tracking-[0.6em] text-[#00112b]/40">Edición Limitada 2026</span>
                 </div>
-                
-                <button onclick="openCatalogModal()" class="group flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-[#00112b] hover:text-[#ff0022] transition-colors">
-                    Explorar Catálogo ({{ cursos|length }})
-                    <span class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-[#ff0022] group-hover:bg-[#ff0022] group-hover:text-white transition-all duration-500">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                    </span>
-                </button>
+                <h2 class="text-6xl md:text-7xl font-black text-[#00112b] tracking-tighter leading-none">
+                    Nuestros <span class="text-[#ff0022] italic font-serif font-light">Programas</span>
+                </h2>
             </div>
+            
+            <button onclick="openCatalogModal()" class="group flex items-center gap-6 px-10 py-5 rounded-full border border-slate-100 bg-white/80 backdrop-blur-sm hover:border-[#ff0022] hover:shadow-[0_20px_40px_-15px_rgba(255,0,34,0.15)] transition-all duration-700">
+                <span class="text-[10px] font-black uppercase tracking-widest text-[#00112b]">Explorar Todo</span>
+                <div class="w-2 h-2 rounded-full bg-[#00112b] group-hover:bg-[#ff0022] group-hover:scale-[2.5] transition-all duration-500"></div>
+            </button>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {% for curso in cursos|slice:":4" %}
-            <div class="group cursor-pointer" onclick="cargarDetalleModal('{{ curso.slug }}')">
-                <div class="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-8 bg-slate-100 transition-all duration-700 group-hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] group-hover:-translate-y-4">
-                    <img src="{{ curso.portada.url }}" class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000">
+            <div class="group relative flex flex-col cursor-pointer" onclick="cargarDetalleModal('{{ curso.slug }}')">
+                
+                <div class="relative aspect-[3/4.5] w-full overflow-hidden rounded-[2rem] bg-slate-50 transition-all duration-[1s] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:shadow-[0_40px_80px_-20px_rgba(0,17,43,0.2)]">
                     
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#00112b]/40"></div>
-                    
-                    <div class="absolute top-6 left-6">
-                        <span class="bg-white/90 backdrop-blur-md text-[#00112b] text-[8px] font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-sm">
+                    <img src="{{ curso.portada.url }}" 
+                         class="w-full h-full object-cover transition-all duration-[1.5s] scale-110 group-hover:scale-100 grayscale-[0.5] group-hover:grayscale-0"
+                         alt="{{ curso.titulo }}">
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#00112b]/90 via-[#00112b]/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700">
+                        <div class="absolute bottom-8 left-8 right-8 translate-y-8 group-hover:translate-y-0 transition-transform duration-700">
+                            <p class="text-[10px] font-black text-[#ff0022] uppercase tracking-[0.3em] mb-2">Ver Programa</p>
+                            <div class="h-[1px] w-full bg-white/20 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 delay-100"></div>
+                        </div>
+                    </div>
+
+                    <div class="absolute top-6 right-6 overflow-hidden">
+                        <span class="inline-block px-4 py-2 bg-white/90 backdrop-blur-md text-[#00112b] text-[8px] font-black uppercase tracking-widest rounded-full shadow-sm translate-y-0 group-hover:-translate-y-full transition-transform duration-500">
                             {{ curso.get_nivel_display }}
                         </span>
                     </div>
                 </div>
 
-                <div class="px-2">
-                    <div class="flex items-center gap-3 mb-3 text-slate-300">
-                        <span class="text-[10px] font-bold">0{{ forloop.counter }}</span>
-                        <span class="w-4 h-[1px] bg-slate-200"></span>
-                        <span class="text-[9px] font-bold uppercase tracking-widest">{{ curso.instructor.nombre }}</span>
+                <div class="mt-8 px-4 transition-all duration-500 group-hover:translate-x-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-[10px] font-bold text-slate-300 italic">/ 0{{ forloop.counter }}</span>
+                        <div class="h-[1px] flex-grow bg-slate-100"></div>
                     </div>
-                    <h3 class="text-xl font-bold text-[#00112b] leading-tight tracking-tight group-hover:text-[#ff0022] transition-colors duration-300">
+                    
+                    <h3 class="text-xl font-extrabold text-[#00112b] leading-[1.1] tracking-tight group-hover:text-[#ff0022] transition-colors duration-500">
                         {{ curso.titulo }}
                     </h3>
+                    
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">
+                            {{ curso.instructor.nombre }}
+                        </span>
+                        <svg class="w-4 h-4 text-[#ff0022] opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
-    
+
+    <div class="absolute bottom-0 left-0 w-full h-24 bg-slate-50/50" 
+         style="clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 0);"></div>
 </section>
 
 <div id="catalogModal" class="fixed inset-0 z-[150] hidden items-center justify-center p-4">
-    <div class="absolute inset-0 bg-[#00112b]/95 backdrop-blur-2xl" onclick="closeCatalogModal()"></div>
-    <div class="relative bg-white w-full max-w-6xl h-[85vh] rounded-[3rem] overflow-hidden flex flex-col shadow-2xl">
-        <div class="p-10 border-b border-slate-50 flex justify-between items-center bg-white">
-            <h2 class="text-3xl font-black text-[#00112b] tracking-tighter">TODOS LOS PROGRAMAS <span class="text-[#ff0022]">.</span></h2>
-            <button onclick="closeCatalogModal()" class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-red-50 hover:text-red-500 transition-all">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    <div class="absolute inset-0 bg-[#00112b]/90 backdrop-blur-xl transition-opacity duration-500" onclick="closeCatalogModal()"></div>
+    
+    <div class="relative bg-white w-full max-w-6xl h-[92vh] rounded-[3rem] overflow-hidden flex flex-col shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] border border-slate-100">
+        
+        <div class="relative px-12 py-12 border-b border-slate-50 flex justify-between items-center bg-white z-20 overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/3 h-full pointer-events-none opacity-40">
+                <div class="absolute right-10 top-0 h-full w-32 bg-slate-50" style="clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);"></div>
+            </div>
+
+            <div class="relative z-10">
+                <h2 class="text-4xl md:text-5xl font-black text-[#00112b] tracking-tighter leading-none">
+                    <span class="text-[#ff0022] italic font-serif font-light">Cursos</span>
+                </h2>
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.4em] mt-4 flex items-center gap-2">
+                    <span class="w-6 h-[1px] bg-slate-200"></span>
+                    Selección Académica Profesional
+                </p>
+            </div>
+            
+            <button onclick="closeCatalogModal()" class="group relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-slate-50 transition-all duration-500 hover:bg-[#00112b] shadow-sm">
+                <svg class="w-5 h-5 text-[#00112b] group-hover:text-white group-hover:rotate-90 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
             </button>
         </div>
-        <div class="flex-grow overflow-y-auto p-10 custom-scrollbar">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div class="flex-grow overflow-y-auto custom-scrollbar bg-white relative">
+            <div class="sticky top-0 z-30 grid grid-cols-12 px-12 py-5 bg-white/95 backdrop-blur-md border-b border-slate-50 text-[9px] font-black text-slate-300 uppercase tracking-[0.2em]">
+                <div class="col-span-1 text-gray-900">Ref.</div>
+                <div class="col-span-6 md:col-span-7 text-gray-900">Especialización</div>
+                <div class="col-span-2 text-center text-gray-900">Nivel</div>
+                <div class="col-span-3 md:col-span-2 text-gray-900 px-4">Ver detalle</div>
+            </div>
+
+            <div class="divide-y divide-slate-50 px-8">
                 {% for curso in cursos %}
-                    <div class="flex gap-4 p-4 rounded-3xl hover:bg-slate-50 cursor-pointer transition-all" onclick="closeCatalogModal(); cargarDetalleModal('{{ curso.slug }}')">
-                        <img src="{{ curso.portada.url }}" class="w-20 h-20 rounded-2xl object-cover">
+                <div class="group grid grid-cols-12 items-center px-4 py-7 hover:bg-slate-50/80 transition-all duration-500 cursor-pointer rounded-2xl opacity-0 translate-y-[10px]"
+                     style="animation: rowFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; animation-delay: {{ forloop.counter0 }}00ms;"
+                     onclick="closeCatalogModal(); cargarDetalleModal('{{ curso.slug }}')">
+                    
+                    <div class="col-span-1">
+                        <span class="text-[10px] font-bold text-slate-200 group-hover:text-[#ff0022] transition-colors italic">#0{{ forloop.counter }}</span>
+                    </div>
+
+                    <div class="col-span-6 md:col-span-7 flex items-center gap-6">
+                        <div class="hidden sm:block w-12 h-12 rounded-xl overflow-hidden bg-slate-50 border border-slate-100 group-hover:scale-105 transition-transform duration-500">
+                            <img src="{{ curso.portada.url }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        </div>
                         <div>
-                            <p class="text-[9px] font-bold text-[#ff0022] uppercase tracking-widest mb-1">{{ curso.get_nivel_display }}</p>
-                            <h4 class="text-sm font-bold text-[#00112b] leading-snug">{{ curso.titulo }}</h4>
+                            <h4 class="text-lg font-bold text-[#00112b] tracking-tight leading-tight group-hover:text-[#ff0022] transition-colors">
+                                {{ curso.titulo }}
+                            </h4>
+                            <div class="flex items-center gap-2 mt-1">
+                                <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-width="2"/></svg>
+                                <span class="text-[10px] text-slate-400 font-medium uppercase tracking-tighter">{{ curso.instructor.nombre }}</span>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="col-span-2 flex justify-center">
+                        <span class="text-[9px] font-black text-slate-400 uppercase tracking-tighter bg-slate-50 px-3 py-1 rounded-md border border-slate-100 group-hover:bg-white transition-all">
+                            {{ curso.get_nivel_display }}
+                        </span>
+                    </div>
+
+                    <div class="col-span-3 md:col-span-2 flex items-center justify-end gap-5">
+                        <span class="text-base font-black text-[#00112b] tracking-tighter italic">{{ curso.precio }}</span>
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-50 text-slate-400 group-hover:bg-[#00112b] group-hover:text-white transition-all duration-500">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
                 {% endfor %}
+            </div>
+        </div>
+        
+        <div class="px-12 py-8 bg-white border-t border-slate-50 flex justify-between items-center z-20">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-2 rounded-full bg-[#ff0022] animate-pulse"></div>
+                <span class="text-[10px] font-black text-[#00112b] uppercase tracking-[0.2em]">{{ cursos|length }} Programas Disponibles</span>
+            </div>
+            <div class="flex items-center gap-8">
+                <span class="text-[9px] font-bold text-slate-300 uppercase tracking-widest italic">Cendae Network 2026</span>
             </div>
         </div>
     </div>
 </div>
+
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&family=Cormorant+Garamond:ital,wght@1,400&display=swap');
+    /* Animaciones y Scrollbar */
+    @keyframes rowFadeIn {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    #catalogModal.flex .relative {
+        animation: modalScaleUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
 
-    #cursos { font-family: 'Plus Jakarta Sans', sans-serif; }
-    .serif { font-family: 'Cormorant Garamond', serif; }
+    @keyframes modalScaleUp {
+        from { opacity: 0; transform: scale(0.99) translateY(10px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+    }
 
-    /* Mejora de la legibilidad en fondo blanco */
-    .tracking-tight { letter-spacing: -0.025em; }
-    .tracking-tighter { letter-spacing: -0.05em; }
-
-    /* Custom Scrollbar para el catálogo */
-    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-    .custom-scrollbar::-webkit-scrollbar-track { background: white; }
+    .custom-scrollbar::-webkit-scrollbar { width: 3px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
     .custom-scrollbar::-webkit-scrollbar-thumb { background: #f1f5f9; border-radius: 10px; }
-    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #ff0022; }
-
-    /* Animación de apertura del catálogo */
-    #catalogModal.flex {
-        animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    @keyframes slideUp {
-        from { transform: translateY(50px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
 </style>
 
 <script>
-    function cargarDetalleModal(slug) {
-        const modal = document.getElementById('cursoModal');
-        
-        fetch(`/cursos/api/curso/${slug}/`)
-            .then(response => response.json())
-            .then(data => {
-                const el = (id) => document.getElementById(id);
-                
-                // Actualización de Textos
-                el('modal-titulo').innerText = data.titulo;
-                el('modal-descripcion').innerText = data.descripcion;
-                el('modal-precio').innerText = `S/ ${data.precio}`;
-                el('modal-nivel').innerText = data.detalles.nivel;
-                el('modal-instructor-nombre').innerText = data.instructor.nombre;
-                el('modal-instructor-cargo').innerText = data.instructor.titulo;
-                el('modal-instructor-foto').src = data.instructor.foto;
-                el('modal-portada').src = data.portada || data.instructor.foto;
+// --- FUNCIONES DEL CATÁLOGO ---
+function openCatalogModal() {
+    const catalogModal = document.getElementById('catalogModal');
+    catalogModal.classList.remove('hidden');
+    catalogModal.classList.add('flex');
+    document.body.style.overflow = 'hidden'; // Bloquea scroll
+}
 
-                // WhatsApp 
-                const phone = "51948658726";
-                const msg = encodeURIComponent(`Hola, solicito el syllabus completo del curso: ${data.titulo}`);
-                el('modal-whatsapp').href = `https://wa.me/${phone}?text=${msg}`;
+function closeCatalogModal() {
+    const catalogModal = document.getElementById('catalogModal');
+    catalogModal.classList.add('hidden');
+    catalogModal.classList.remove('flex');
+    // Solo rehabilitar scroll si el otro modal tampoco está abierto
+    if (document.getElementById('cursoModal').classList.contains('hidden')) {
+        document.body.style.overflow = 'auto';
+    }
+}
 
-                // TEMARIO (Diseño mejorado de acordeones circulares)
-                const container = el('modal-temario');
-                container.innerHTML = data.temario.map((modulo, idx) => `
-                    <div class="accordion-item group/item border-b border-slate-100 last:border-0 bg-white transition-all duration-500 hover:bg-slate-50/50">
-                        <div onclick="toggleAccordion(this)" 
-                            class="py-6 flex justify-between items-center cursor-pointer px-4 md:px-0 transition-all duration-300">
-                            <div class="flex items-center gap-6">
-                                <div class="relative flex items-center justify-center">
-                                    <div class="w-10 h-10 rounded-full border-2 border-slate-100 flex items-center justify-center text-[11px] font-black text-slate-300 group-hover/item:border-[#ff0022] group-hover/item:text-[#ff0022] group-hover/item:scale-110 transition-all duration-500 shadow-sm bg-white">
-                                        0${idx + 1}
-                                    </div>
-                                    <div class="absolute inset-0 rounded-full bg-[#ff0022] opacity-0 group-hover/item:opacity-20 group-hover/item:animate-ping -z-10"></div>
-                                </div>
-                                <div>
-                                    <h4 class="text-[9px] font-black uppercase tracking-[0.3em] text-[#ff0022] mb-1">Módulo Estratégico</h4>
-                                    <p class="font-extrabold text-[10px] md:text-[12px] text-[#00112b] tracking-tight group-hover/item:translate-x-1 transition-transform duration-300">${modulo.titulo}</p>
-                                </div>
-                            </div>
-                            
-                            <div class="icon-chevron w-9 h-9 rounded-full flex items-center justify-center transition-all duration-500 bg-[#00112b] text-white shadow-lg group-hover/item:bg-[#ff0022] group-hover/item:rotate-90">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 6v12m6-6H6"/>
-                                </svg>
-                            </div>
+// --- FUNCIONES DE DETALLE (EXISTENTES MEJORADAS) ---
+function cargarDetalleModal(slug) {
+    const modal = document.getElementById('cursoModal');
+    const el = (id) => document.getElementById(id);
+
+    // Si abrimos un detalle desde el catálogo, aseguramos que el catálogo se cierre primero
+    closeCatalogModal();
+
+    fetch(`/cursos/api/curso/${slug}/`)
+        .then(response => response.json())
+        .then(data => {
+            el('modal-titulo').innerText = data.titulo;
+            el('modal-descripcion').innerText = data.descripcion;
+            el('modal-precio').innerText = `S/ ${data.precio}`;
+            el('modal-nivel').innerText = data.detalles.nivel;
+            el('modal-instructor-nombre').innerText = data.instructor.nombre;
+            el('modal-instructor-cargo').innerText = data.instructor.titulo;
+            el('modal-instructor-foto').src = data.instructor.foto;
+
+            const msg = encodeURIComponent(`Hola, solicito información detallada del curso: ${data.titulo}`);
+            el('modal-whatsapp').href = `https://wa.me/51942389557?text=${msg}`;
+
+            // Renderizado de Temario
+            const container = el('modal-temario');
+            container.innerHTML = data.temario.map((modulo, idx) => `
+                <div class="accordion-item border border-slate-100 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-sm">
+                    <div onclick="toggleAccordion(this)" 
+                         class="py-5 flex justify-between items-center cursor-pointer px-6 hover:bg-slate-50/50 transition-colors group">
+                        <div class="flex items-center gap-4">
+                            <span class="text-[10px] font-black text-slate-300 group-hover:text-blue-600 transition-colors tracking-tighter">/0${idx + 1}</span>
+                            <h4 class="text-xs font-bold text-slate-700 uppercase tracking-tight">${modulo.titulo}</h4>
                         </div>
-
-                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]">
-                            <div class="pl-[64px] pr-4 pb-10 relative">
-                                <div class="absolute left-[39px] top-0 w-[2px] h-full bg-gradient-to-b from-[#ff0022] via-slate-100 to-transparent opacity-40"></div>
-                                
-                                <div class="space-y-5 mt-4">
-                                    ${modulo.lecciones.map(lec => `
-                                        <div class="flex items-center gap-4 group/lec cursor-default transform hover:translate-x-2 transition-transform duration-300">
-                                            <div class="w-2 h-2 rounded-full bg-[#00112b]/10 border border-slate-200 group-hover/lec:bg-[#ff0022] group-hover/lec:border-[#ff0022] group-hover/lec:scale-125 transition-all duration-300 shadow-sm"></div>
-                                            <span class="text-[12px] font-semibold text-slate-500 group-hover/lec:text-[#00112b] transition-colors tracking-tight">${lec}</span>
-                                        </div>
-                                    `).join('')}
+                        <svg class="w-4 h-4 text-slate-300 transition-transform duration-500 icon-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="3" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-slate-50/30">
+                        <div class="pb-6 pl-14 pr-6 pt-2 space-y-3">
+                            ${modulo.lecciones.map(lec => `
+                                <div class="flex items-center gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-blue-200"></div>
+                                    <span class="text-[11px] font-medium text-slate-500 uppercase tracking-tight leading-none">${lec}</span>
                                 </div>
-                            </div>
+                            `).join('')}
                         </div>
                     </div>
-                `).join('');
-                
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                document.body.style.overflow = 'hidden';
-            });
-    }
-
-    function toggleAccordion(element) {
-        const content = element.nextElementSibling;
-        const icon = element.querySelector('.icon-chevron');
-        
-        // Cerrar otros para que el modal no se haga gigante
-        document.querySelectorAll('.accordion-content').forEach(other => {
-            if (other !== content && other.style.maxHeight) {
-                other.style.maxHeight = null;
-                other.parentElement.querySelector('.icon-chevron').style.transform = 'rotate(0deg)';
-            }
+                </div>
+            `).join('');
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
         });
+}
 
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-            icon.style.transform = 'rotate(0deg)';
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-            icon.style.transform = 'rotate(45deg)'; // El + gira y se vuelve una X de cierre
+function toggleAccordion(element) {
+    const content = element.nextElementSibling;
+    const icon = element.querySelector('.icon-chevron');
+    
+    document.querySelectorAll('.accordion-content').forEach(other => {
+        if (other !== content && other.style.maxHeight) {
+            other.style.maxHeight = null;
+            const otherIcon = other.parentElement.querySelector('.icon-chevron');
+            if(otherIcon) otherIcon.style.transform = 'rotate(0deg)';
         }
-    }
+    });
 
-    function openCatalogModal() {
-        const modal = document.getElementById('catalogModal');
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        document.body.style.overflow = 'hidden';
+    if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        icon.style.transform = 'rotate(0deg)';
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.style.transform = 'rotate(180deg)';
     }
+}
 
-    function closeCatalogModal() {
-        const modal = document.getElementById('catalogModal');
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        if (!document.getElementById('cursoModal').classList.contains('flex')) {
-            document.body.style.overflow = 'auto';
-        }
+function closeModal() {
+    const modal = document.getElementById('cursoModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    
+    // Solo rehabilitar scroll si el catálogo tampoco está abierto
+    if (document.getElementById('catalogModal').classList.contains('hidden')) {
+        document.body.style.overflow = 'auto';
     }
+}
+
+// Cerrar con tecla ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        closeModal();
+        closeCatalogModal();
+    }
+});
 </script>
 
