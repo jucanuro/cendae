@@ -1,90 +1,96 @@
 {% load static %}
-<section id="cursos" class="relative py-32 bg-white overflow-hidden font-['Plus_Jakarta_Sans',_sans-serif]">
+<section id="cursos" class="relative py-12 bg-white overflow-hidden font-['Plus_Jakarta_Sans',_sans-serif]">
     
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(#00112b_0.5px,transparent_0.5px)] [background-size:32px_32px] opacity-[0.03]"></div>
-
-    <div class="absolute inset-0 pointer-events-none overflow-hidden">
-        <div class="absolute -top-24 -left-24 w-96 h-96 bg-gradient-to-br from-slate-100 to-transparent rounded-full opacity-50 blur-3xl"></div>
-        
-        <div class="absolute bottom-[-10%] right-[-5%] w-[40%] h-[500px] bg-[#00112b]/[0.02] -rotate-12 translate-y-20" 
-             style="clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);"></div>
-
-        <div class="absolute bottom-20 left-[10%] w-32 h-[400px] border border-slate-200/50 rounded-full rotate-[35deg] opacity-30"></div>
-        
-        <div class="absolute bottom-40 right-[15%] w-12 h-24 bg-[#ff0022]/10 rotate-[15deg]"
-             style="clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);"></div>
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="absolute top-0 left-0 w-[30%] h-[300px] bg-slate-50/50" style="clip-path: polygon(0 0, 100% 0, 0 100%);"></div>
+        <div class="absolute bottom-0 right-0 w-[20%] h-[200px] bg-slate-50/30" style="clip-path: polygon(100% 0, 100% 100%, 0 100%);"></div>
     </div>
 
     <div class="container mx-auto px-6 relative z-10">
         
-        <div class="relative mb-24 flex flex-col md:flex-row justify-between items-end gap-12">
-            <div class="max-w-2xl">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="w-2 h-2 rounded-full bg-[#ff0022] animate-pulse"></span>
-                    <span class="text-[10px] font-black uppercase tracking-[0.6em] text-[#00112b]/40">Edición Limitada 2026</span>
-                </div>
-                <h2 class="text-6xl md:text-7xl font-black text-[#00112b] tracking-tighter leading-none">
-                    Nuestros <span class="text-[#ff0022] italic font-serif font-light">Programas</span>
+        <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-4 border-b border-slate-100 pb-5">
+            <div class="flex items-center gap-4">
+                <h2 class="text-3xl font-black text-[#00112b] tracking-tighter uppercase leading-none">
+                    Catálogo <span class="text-[#ff0022]">2026</span>
                 </h2>
+                <span class="hidden md:block w-[1px] h-6 bg-slate-200"></span>
+                <span class="text-[9px] font-bold uppercase tracking-[0.3em] text-slate-400">Selección Elite</span>
             </div>
-            
-            <button onclick="openCatalogModal()" class="group flex items-center gap-6 px-10 py-5 rounded-full border border-slate-100 bg-white/80 backdrop-blur-sm hover:border-[#ff0022] hover:shadow-[0_20px_40px_-15px_rgba(255,0,34,0.15)] transition-all duration-700">
-                <span class="text-[10px] font-black uppercase tracking-widest text-[#00112b]">Explorar Todo</span>
-                <div class="w-2 h-2 rounded-full bg-[#00112b] group-hover:bg-[#ff0022] group-hover:scale-[2.5] transition-all duration-500"></div>
+            <button onclick="openCatalogModal()" class="group flex items-center gap-3 text-[9px] font-black uppercase tracking-widest text-[#00112b] hover:text-[#ff0022] transition-colors">
+                Explorar Todo
+                <span class="w-7 h-7 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-[#ff0022] group-hover:bg-[#ff0022] group-hover:text-white transition-all text-xs">→</span>
             </button>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
             {% for curso in cursos|slice:":4" %}
             <div class="group relative flex flex-col cursor-pointer" onclick="cargarDetalleModal('{{ curso.slug }}')">
                 
-                <div class="relative aspect-[3/4.5] w-full overflow-hidden rounded-[2rem] bg-slate-50 transition-all duration-[1s] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:shadow-[0_40px_80px_-20px_rgba(0,17,43,0.2)]">
-                    
-                    <img src="{{ curso.portada.url }}" 
-                         class="w-full h-full object-cover transition-all duration-[1.5s] scale-110 group-hover:scale-100 grayscale-[0.5] group-hover:grayscale-0"
-                         alt="{{ curso.titulo }}">
+                <div class="relative perspective-1000 mb-4">
+                    <div class="relative aspect-[3/3.8] w-full transition-transform duration-500 preserve-3d group-hover:[transform:rotateY(-12deg)]">
+                        
+                        <div class="absolute inset-y-0 -left-[4px] w-[4px] bg-[#00112b] origin-right [transform:rotateY(-90deg)] group-hover:bg-[#ff0022] transition-colors"></div>
 
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#00112b]/90 via-[#00112b]/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700">
-                        <div class="absolute bottom-8 left-8 right-8 translate-y-8 group-hover:translate-y-0 transition-transform duration-700">
-                            <p class="text-[10px] font-black text-[#ff0022] uppercase tracking-[0.3em] mb-2">Ver Programa</p>
-                            <div class="h-[1px] w-full bg-white/20 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 delay-100"></div>
+                        <div class="relative w-full h-full bg-slate-50 shadow-[15px_15px_35px_-15px_rgba(0,0,0,0.12)] overflow-hidden" 
+                             style="clip-path: polygon(0 0, 100% 0, 97% 100%, 0 100%);">
+                            <img src="{{ curso.portada.url }}" 
+                                 class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
+                                 alt="{{ curso.titulo }}">
+                            
+                            <div class="absolute top-3 left-3">
+                                <span class="bg-[#00112b]/90 backdrop-blur-sm text-white text-[7px] font-black px-2 py-1 uppercase tracking-widest">
+                                    {{ curso.get_nivel_display }}
+                                </span>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="absolute top-6 right-6 overflow-hidden">
-                        <span class="inline-block px-4 py-2 bg-white/90 backdrop-blur-md text-[#00112b] text-[8px] font-black uppercase tracking-widest rounded-full shadow-sm translate-y-0 group-hover:-translate-y-full transition-transform duration-500">
-                            {{ curso.get_nivel_display }}
-                        </span>
                     </div>
                 </div>
 
-                <div class="mt-8 px-4 transition-all duration-500 group-hover:translate-x-2">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="text-[10px] font-bold text-slate-300 italic">/ 0{{ forloop.counter }}</span>
-                        <div class="h-[1px] flex-grow bg-slate-100"></div>
+                <div class="flex flex-col px-1">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="text-[9px] font-mono text-slate-300">#0{{ forloop.counter }}</span>
+                        <span class="text-xs font-black text-[#00112b]">S/ {{ curso.precio_principal }}</span>
                     </div>
-                    
-                    <h3 class="text-xl font-extrabold text-[#00112b] leading-[1.1] tracking-tight group-hover:text-[#ff0022] transition-colors duration-500">
+
+                    <h3 class="text-base font-black text-[#00112b] leading-tight mb-2 uppercase tracking-tight group-hover:text-[#ff0022] transition-colors line-clamp-1">
                         {{ curso.titulo }}
                     </h3>
-                    
-                    <div class="mt-4 flex items-center justify-between">
-                        <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">
-                            {{ curso.instructor.nombre }}
-                        </span>
-                        <svg class="w-4 h-4 text-[#ff0022] opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
+
+                    <p class="text-[10px] text-slate-500 leading-relaxed mb-4 font-medium h-8 border-l border-slate-100 pl-3">
+                        {{ curso.descripcion|truncatechars:50 }}
+                    </p>
+
+                    <div class="flex items-center justify-between pt-3 border-t border-slate-50">
+                        <div class="flex items-center gap-2">
+                            <div class="w-5 h-5 rounded-full overflow-hidden grayscale border border-slate-100">
+                                <img src="{{ curso.instructor.foto.url }}" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-[8px] font-bold text-slate-400 uppercase">
+                                {{ curso.instructor.nombre|truncatechars:15 }}
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-1 text-[8px] font-black text-[#00112b]">
+                            <span class="text-[#ff0022] tracking-tighter">{{ curso.horas_certificacion }}H</span>
+                        </div>
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
-
-    <div class="absolute bottom-0 left-0 w-full h-24 bg-slate-50/50" 
-         style="clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 0);"></div>
 </section>
+
+<style>
+    .perspective-1000 { perspective: 1000px; }
+    .preserve-3d { transform-style: preserve-3d; }
+    /* Estética de texto para evitar saltos de línea feos */
+    .line-clamp-1 {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
 
 <div id="catalogModal" class="fixed inset-0 z-[150] hidden items-center justify-center p-4">
     <div class="absolute inset-0 bg-[#00112b]/90 backdrop-blur-xl transition-opacity duration-500" onclick="closeCatalogModal()"></div>
