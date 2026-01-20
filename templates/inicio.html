@@ -1,92 +1,107 @@
-<section id="inicio" class="relative min-h-screen flex items-center bg-white overflow-hidden pt-32 pb-20">
+<section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden font-['Plus_Jakarta_Sans',sans-serif] bg-slate-50">
     
-    <div class="absolute top-0 right-0 w-1/2 h-full bg-slate-50/30 rounded-l-[20rem] -z-10"></div>
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#000a16] via-[#000a16]/80 to-transparent z-10"></div>
 
-    <div class="container mx-auto px-6 lg:px-20 relative z-10">
-        <div class="flex flex-col lg:grid lg:grid-cols-12 gap-20 items-center">
+        <div id="carousel-inner" class="relative w-full h-full">
+            <div class="carousel-item absolute inset-0 opacity-100 transition-opacity duration-1000">
+                <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2000" class="w-full h-full object-cover grayscale-[0.5] contrast-125 brightness-50">
+            </div>
+            <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000" class="w-full h-full object-cover grayscale-[0.5] contrast-125 brightness-50">
+            </div>
+            <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2000" class="w-full h-full object-cover grayscale-[0.5] contrast-125 brightness-50">
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 lg:px-20 relative z-20 pt-10">
+        <div class="flex flex-col lg:grid lg:grid-cols-12 gap-12 items-center">
             
-            <div class="lg:col-span-6">
-                <div class="mb-10">
-                    <span class="text-[#00112b] text-[10px] font-black uppercase tracking-[0.6em] block mb-4">
+            <div class="lg:col-span-7">
+                <div class="mb-6">
+                    <span class="text-[#e5142d] text-[11px] font-black uppercase tracking-[0.6em] flex items-center gap-3">
+                        <span class="w-8 h-[1px] bg-[#e5142d]"></span>
                         Data Science & Analytics
                     </span>
-                    <div class="w-12 h-[1px] bg-[#00112b]"></div>
                 </div>
 
-                <h1 class="text-[8vw] lg:text-[90px] font-black text-[#00112b] leading-[0.8] tracking-[-0.05em] mb-12">
-                    <span class="text-slate-200 block mb-2">DOMINA</span>
-                    <span class="italic font-light tracking-tighter serif pr-4 block mb-2">los datos</span>
-                    <span class="relative block">CON CRITERIO</span>
+                <h1 class="text-[clamp(2.5rem,7vw,85px)] font-black text-white leading-[0.9] tracking-tighter mb-10">
+                    DOMINA<br>
+                    <span class="text-slate-400 font-light italic serif">los datos</span><br>
+                    CON CRITERIO
                 </h1>
 
                 <div class="flex flex-col md:flex-row gap-12 items-start md:items-center">
-                    <p class="text-slate-400 text-[12px] font-bold leading-relaxed uppercase tracking-[0.2em] max-w-[320px]">
-                        Aprende estadística, análisis de datos, programación y Power BI con enfoque práctico.
+                    <p class="text-slate-300 text-[14px] leading-relaxed max-w-[340px] border-l border-white/20 pl-6">
+                        Análisis avanzado de datos y programación con enfoque estratégico para la toma de decisiones.
                     </p>
 
-                    <a href="#cursos" class="group relative w-24 h-24 flex items-center justify-center">
-                        <svg class="absolute w-full h-full animate-[spin_20s_linear_infinite]" viewBox="0 0 100 100">
-                            <defs><path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" /></defs>
-                            <text class="text-[9px] font-bold uppercase tracking-[0.2em] fill-slate-300">
-                                <textPath xlink:href="#circlePath">EXPLORA LOS CURSOS • DATOS • CIENCIA • </textPath>
-                            </text>
-                        </svg>
-                        <div class="w-12 h-12 bg-[#00112b] rounded-full flex items-center justify-center group-hover:bg-[#ff0022] transition-all duration-700 shadow-xl">
-                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    <a href="#cursos" class="group flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-[#e5142d] group-hover:border-[#e5142d] transition-all duration-500">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
                         </div>
+                        <span class="text-[10px] font-bold text-white uppercase tracking-[0.3em]">Ver Programas</span>
                     </a>
                 </div>
             </div>
 
-            <div class="lg:col-span-6">
-                <div class="grid grid-cols-2 gap-10">
-                    <div class="space-y-10">
-                        <div class="rounded-[3rem] overflow-hidden aspect-[3/4] shadow-sm border border-slate-100 p-2 bg-white">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600" 
-                                 class="w-full h-full object-cover rounded-[2.5rem] grayscale hover:grayscale-0 transition-all duration-700">
+            <div class="lg:col-span-5 w-full flex justify-center lg:justify-end rounded-lg">
+                <div class="relative w-full max-w-[380px] bg-white p-[1px] shadow-2xl rounded-lg">
+                    
+                    
+                    <div class="bg-white p-10 rounded-lg">
+                        <div class="mb-10">
+                            <h3 class="text-3xl font-black text-[#001A3D] tracking-tighter uppercase mb-2">Contacto</h3>
+                            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Temario y costos 2026</p>
                         </div>
-                        <div class="rounded-[2.5rem] overflow-hidden aspect-square shadow-sm border border-slate-100 p-2 bg-white w-2/3 ml-auto">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" 
-                                 class="w-full h-full object-cover rounded-[2rem] grayscale hover:grayscale-0 transition-all duration-700">
-                        </div>
-                    </div>
-
-                    <div class="pt-20 space-y-10">
-                        <div class="rounded-[3rem] overflow-hidden aspect-[3/4] shadow-sm border border-slate-100 p-2 bg-white">
-                            <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&q=80&w=600" 
-                                 class="w-full h-full object-cover rounded-[2.5rem] grayscale hover:grayscale-0 transition-all duration-700">
-                        </div>
-                        <div class="p-6">
-                            <p class="text-4xl font-black text-[#00112b] mb-1">98%</p>
-                            <p class="text-[9px] font-black text-slate-300 uppercase tracking-widest leading-tight">
-                                Casos de éxito <br> en la industria
-                            </p>
-                        </div>
+                        
+                        <form class="space-y-6">
+                            <div class="space-y-1">
+                                <label class="text-[9px] font-black text-slate-500 uppercase tracking-tighter">Nombre</label>
+                                <input type="text" placeholder="EJ. JUAN PÉREZ" class="w-full py-2 text-xs font-bold text-[#001A3D] border-b-2 border-slate-100 outline-none focus:border-[#e5142d] transition-colors bg-transparent placeholder:opacity-30">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-[9px] font-black text-slate-500 uppercase tracking-tighter">Email</label>
+                                <input type="email" placeholder="CORREO@EMPRESA.COM" class="w-full py-2 text-xs font-bold text-[#001A3D] border-b-2 border-slate-100 outline-none focus:border-[#e5142d] transition-colors bg-transparent placeholder:opacity-30">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-[9px] font-black text-slate-500 uppercase tracking-tighter">WhatsApp</label>
+                                <input type="tel" placeholder="+51 000 000 000" class="w-full py-2 text-xs font-bold text-[#001A3D] border-b-2 border-slate-100 outline-none focus:border-[#e5142d] transition-colors bg-transparent placeholder:opacity-30">
+                            </div>
+                            
+                            <div class="pt-6">
+                                <button class="w-full rounded-lg bg-[#001A3D] text-white py-5 text-[10px] font-black uppercase tracking-[0.5em] hover:bg-[#e5142d] transition-all duration-700 relative overflow-hidden group">
+                                    <span class="relative z-10">Enviar solicitud</span>
+                                    <div class="absolute inset-0 bg-[#e5142d] translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
-    <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.02] rotate-90 origin-right select-none pointer-events-none pr-10">
-        <h2 class="text-[12vw] font-black text-[#00112b] tracking-tighter uppercase">Cendae</h2>
+    <div class="absolute bottom-0 left-0 w-full h-24 lg:h-32 bg-slate-50" 
+         style="clip-path: polygon(0 60%, 40% 60%, 50% 100%, 100% 100%, 100% 100%, 0 100%);">
     </div>
+
 </section>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;800&family=Cormorant+Garamond:ital,wght@1,300&display=swap');
-    
-    #inicio { font-family: 'Plus Jakarta Sans', sans-serif; }
     .serif { font-family: 'Cormorant Garamond', serif; }
-
-    /* Animación sutil de entrada */
-    .container {
-        animation: fadeInReveal 1.2s ease-out;
-    }
-
-    @keyframes fadeInReveal {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
 </style>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-item');
+    setInterval(() => {
+        slides[currentSlide].classList.remove('opacity-100');
+        slides[currentSlide].classList.add('opacity-0');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.remove('opacity-0');
+        slides[currentSlide].classList.add('opacity-100');
+    }, 5000);
+</script>

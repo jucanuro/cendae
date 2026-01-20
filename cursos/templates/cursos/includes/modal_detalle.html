@@ -1,78 +1,85 @@
 <div id="cursoModal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4 transition-all duration-700 font-['Plus_Jakarta_Sans',_sans-serif]">
-    <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-md" onclick="closeModal()"></div>
+    <div class="absolute inset-0 bg-[#00112b]/95 backdrop-blur-md" onclick="closeModal()"></div>
     
-    <div class="relative bg-white w-full max-w-6xl h-[88vh] flex flex-col md:flex-row z-10 overflow-hidden rounded-[2rem] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] border border-slate-100">
+    <div class="relative bg-white w-full max-w-6xl h-[88vh] flex flex-col md:flex-row z-10 overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.6)] border border-slate-200"
+         style="clip-path: polygon(0 0, 100% 0, 100% 95%, 95% 100%, 0 100%);">
         
-        <div class="flex-[0.7] bg-[#f8fafc] p-10 md:p-14 flex flex-col justify-between border-r border-slate-100">
+        <div class="flex-[0.7] bg-slate-50 p-10 md:p-14 flex flex-col justify-between border-r border-slate-200 relative">
+            <div class="absolute top-0 left-0 w-1 h-32 bg-[#ff0022]"></div>
+
             <div class="relative z-10">
-                <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 rounded-full mb-10">
-                    <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                    <span id="modal-nivel" class="text-[9px] font-black uppercase tracking-[0.2em] text-blue-700"></span>
+                <div class="inline-flex items-center gap-3 mb-12">
+                    <div class="w-2 h-2 bg-[#ff0022]"></div>
+                    <span id="modal-nivel" class="text-[10px] font-black uppercase tracking-[0.3em] text-[#00112b]"></span>
                 </div>
 
                 <div class="space-y-1 mb-12">
-                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Pago único</p>
-                    <div id="modal-precio" class="text-5xl font-black text-slate-900 tracking-tighter"></div>
+                    <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Inversión Total</p>
+                    <div id="modal-precio" class="text-6xl font-black text-[#00112b] tracking-tighter italic"></div>
                 </div>
 
-                <div class="space-y-6 pt-10 border-t border-slate-200/60">
-                    <div class="flex items-center gap-4">
-                        <div class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center border border-slate-100">
-                            <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <div class="space-y-6 pt-10 border-t border-slate-200">
+                    <div class="flex items-center gap-5">
+                        <div class="w-10 h-10 bg-white border border-slate-200 flex items-center justify-center shadow-sm">
+                            <svg class="w-5 h-5 text-[#ff0022]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                         </div>
                         <div>
-                            <span class="block text-[8px] font-black text-slate-400 uppercase tracking-widest">Garantía</span>
-                            <span class="text-[11px] text-slate-600 font-bold uppercase">Certificación Oficial</span>
+                            <span class="block text-[8px] font-black text-slate-400 uppercase tracking-widest">Acreditación</span>
+                            <span class="text-[11px] text-[#00112b] font-bold uppercase tracking-tight">Certificado Oficial</span>
                         </div>
                     </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center border border-slate-100">
-                            <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                    <div class="flex items-center gap-5">
+                        <div class="w-10 h-10 bg-white border border-slate-200 flex items-center justify-center shadow-sm">
+                            <svg class="w-5 h-5 text-[#ff0022]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                         </div>
                         <div>
-                            <span class="block text-[8px] font-black text-slate-400 uppercase tracking-widest">Clases</span>
-                            <span class="text-[11px] text-slate-600 font-bold uppercase">Streaming en Vivo</span>
+                            <span class="block text-[8px] font-black text-slate-400 uppercase tracking-widest">Metodología</span>
+                            <span class="text-[11px] text-[#00112b] font-bold uppercase tracking-tight">Streaming 4K Live</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <a id="modal-whatsapp" href="#" target="_blank" 
-               class="group flex items-center justify-between bg-blue-600 hover:bg-slate-900 text-white p-2 pl-8 rounded-full transition-all duration-500 shadow-lg shadow-blue-200">
-                <span class="text-[10px] font-black uppercase tracking-widest">Inscribirme</span>
-                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.181-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.747-2.874-2.512-2.96-2.626-.088-.113-.718-.953-.718-1.819 0-.866.454-1.292.614-1.456.16-.164.346-.205.462-.205.115 0 .23 0 .33.006.107.004.25-.041.392.298.144.347.491 1.2.535 1.287.043.087.072.188.014.304-.058.117-.088.19-.173.289-.087.1-.183.223-.261.303-.098.101-.2.211-.086.406.113.19.506.834 1.085 1.35.748.665 1.378.872 1.572.969.194.098.307.082.421-.049.114-.131.488-.567.618-.76.13-.193.26-.164.437-.1.177.066 1.124.53 1.318.627.194.098.324.145.372.226.048.08.048.463-.096.868z"/></svg>
+               class="group flex items-center justify-between bg-[#00112b] hover:bg-[#ff0022] text-white p-1 pl-8 transition-all duration-500 shadow-xl">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em]">Iniciar Inscripción</span>
+                <div class="w-14 h-14 bg-white/10 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </div>
             </a>
         </div>
 
         <div class="flex-[1.3] bg-white p-8 md:p-16 overflow-y-auto custom-scrollbar relative">
             
-            <div class="flex items-center justify-between mb-12">
-                <div class="flex items-center gap-4">
-                    <img id="modal-instructor-foto" src="" class="w-14 h-14 rounded-full object-cover border border-slate-100 p-0.5 ring-4 ring-slate-50 shadow-sm">
+            <div class="flex items-center justify-between mb-16">
+                <div class="flex items-center gap-5">
+                    <div class="relative">
+                        <img id="modal-instructor-foto" src="" class="w-16 h-16 object-cover grayscale border border-slate-200 p-1 bg-white">
+                        <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-[#ff0022]"></div>
+                    </div>
                     <div>
-                        <h4 id="modal-instructor-nombre" class="font-bold text-slate-800 text-sm tracking-tight leading-none"></h4>
-                        <p id="modal-instructor-cargo" class="text-[9px] text-slate-400 font-bold uppercase tracking-widest mt-1.5"></p>
+                        <h4 id="modal-instructor-nombre" class="font-black text-[#00112b] text-base tracking-tighter leading-none uppercase"></h4>
+                        <p id="modal-instructor-cargo" class="text-[9px] text-slate-400 font-bold uppercase tracking-[0.2em] mt-2"></p>
                     </div>
                 </div>
-                <button onclick="closeModal()" class="w-10 h-10 rounded-full hover:bg-slate-50 flex items-center justify-center text-slate-300 transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                <button onclick="closeModal()" class="w-12 h-12 bg-slate-50 hover:bg-[#ff0022] hover:text-white flex items-center justify-center text-[#00112b] transition-all duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
             </div>
 
-            <div class="mb-16">
-                <h2 id="modal-titulo" class="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter leading-[1.1] mb-6"></h2>
-                <p id="modal-descripcion" class="text-slate-500 text-base leading-relaxed font-medium max-w-xl"></p>
+            <div class="mb-20">
+                <h2 id="modal-titulo" class="text-4xl md:text-6xl font-black text-[#00112b] tracking-tighter leading-[0.9] mb-8 uppercase"></h2>
+                <div class="w-20 h-1 bg-[#ff0022] mb-8"></div>
+                <p id="modal-descripcion" class="text-slate-500 text-base leading-relaxed font-medium max-w-2xl border-l-2 border-slate-100 pl-6 italic"></p>
             </div>
 
-            <div class="space-y-8">
+            <div class="space-y-10 mb-10">
                 <div class="flex items-center gap-4">
-                    <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-300">Curriculum Académico</span>
-                    <div class="h-px flex-grow bg-slate-100"></div>
+                    <span class="text-[11px] font-black uppercase tracking-[0.4em] text-[#00112b]">Módulos del programa</span>
+                    <div class="h-[1px] flex-grow bg-slate-100"></div>
                 </div>
                 
-                <div id="modal-temario" class="space-y-3">
+                <div id="modal-temario" class="grid grid-cols-1 gap-4">
                     </div>
             </div>
         </div>
@@ -80,10 +87,30 @@
 </div>
 
 <style>
-    /* Scrollbar minimalista */
+    /* Ajuste de scroll técnico */
     .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #f8fafc; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #00112b; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #ff0022; }
+
+    /* Estilo para los items que inyectes dinámicamente en el temario */
+    #modal-temario > div {
+        padding: 1rem;
+        border: 1px solid #f1f5f9;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 0.75rem;
+        letter-spacing: -0.025em;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    #modal-temario > div:hover {
+        border-color: #ff0022;
+        background-color: #fffafb;
+        transform: translateX(5px);
+    }
 </style>
 
 <script>
