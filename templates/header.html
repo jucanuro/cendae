@@ -1,232 +1,235 @@
 {% load static %}
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<header id="header-traditional" class="hidden lg:block fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-[150] transition-all duration-700 font-['Plus_Jakarta_Sans',sans-serif]">
-    <div class="relative bg-white/90 backdrop-blur-2xl border border-white/40 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.08)] rounded-lg overflow-hidden">
-        
-        <div class="absolute top-0 left-0 w-full h-[3px] bg-slate-100/50">
-            <div class="h-full bg-gradient-to-r from-transparent via-[#e5142d] to-transparent w-1/4 animate-[scan_4s_ease-in-out_infinite]"></div>
+<header id="main-header"
+        class="fixed top-0 left-0 z-[200] w-full font-['Plus_Jakarta_Sans',sans-serif] transition-all duration-500">
+
+    <div id="header-shell"
+         class="relative w-full border-b border-white/10 bg-[#020817]/80 backdrop-blur-2xl transition-all duration-500">
+
+        <div class="pointer-events-none absolute inset-0 overflow-hidden">
+            <div class="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-[#e5142d]/70 to-transparent"></div>
+            <div class="absolute -left-40 top-0 h-24 w-96 bg-[#e5142d]/10 blur-3xl"></div>
+            <div class="absolute right-0 top-0 h-24 w-[520px] bg-blue-500/10 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-[#e5142d]/50 via-white/10 to-blue-500/40"></div>
         </div>
 
-        <div class="px-10 h-22 flex items-center justify-between relative py-4">
-            
-            <div class="flex items-center gap-14">
-                <a href="/" class="relative group">
-                    <div class="flex items-center gap-5">
-                        <div class="flex flex-col">
-                            <span class="text-3xl font-[800] tracking-[-0.04em] text-[#001A3D] leading-none">
-                                CEN<span class="text-[#e5142d]">DAE</span>
-                            </span>
-                            <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400 mt-1">Educación de nivel</span>
-                        </div>
-                    </div>
-                </a>
+        <div class="relative flex h-[86px] w-full items-center justify-between px-5 transition-all duration-500 sm:px-8 lg:px-12 xl:px-16">
 
-                <nav class="flex items-center gap-2">
-                    <a href="#inicio" class="group relative px-6 py-2">
-                        <span class="relative z-10 text-[13px] font-semibold tracking-wide text-slate-500 group-hover:text-[#001A3D] transition-colors">Inicio</span>
-                        <div class="absolute inset-0 bg-slate-50 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300 -z-0"></div>
-                    </a>
-                    <a href="#cursos" class="group relative px-6 py-2">
-                        <span class="relative z-10 text-[13px] font-semibold tracking-wide text-slate-500 group-hover:text-[#001A3D] transition-colors">Cursos</span>
-                        <div class="absolute inset-0 bg-slate-50 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300 -z-0"></div>
-                    </a>
-                </nav>
-            </div>
-
-            <div class="flex items-center gap-8">
-                <div class="hidden xl:flex items-center gap-3 border-l border-slate-100 pl-8">
-                    <div class="flex flex-col">
-                        <span class="text-[10px] font-extrabold text-slate-300 uppercase tracking-tighter leading-none">Estado</span>
-                        <span class="text-[12px] font-bold text-[#001A3D] flex items-center gap-1.5">
-                            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
-                            Online 2026
-                        </span>
-                    </div>
+            <a href="/" class="group flex items-center gap-4">
+                <div class="relative flex h-12 w-12 items-center justify-center overflow-hidden border border-white/15 bg-white/10">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 h-[3px] w-full bg-[#e5142d]"></div>
+                    <span class="relative text-lg font-black text-white">C</span>
                 </div>
 
-                <a href="https://intranet.cendae.pe/login/index.php" target="_blank"
-                   class="group relative inline-flex items-center gap-4 bg-[#001A3D] pl-8 pr-2.5 py-2.5 rounded-full transition-all duration-500 hover:shadow-[0_20px_40px_-10px_rgba(0,26,61,0.3)] active:scale-95">
-                    
-                    <span class="text-[13px] font-bold tracking-tight text-white group-hover:text-slate-100">Aula Virtual</span>
-                    
-                    <div class="w-10 h-10 bg-[#e5142d] rounded-full flex items-center justify-center transition-all duration-500 group-hover:bg-white group-hover:rotate-[360deg] group-hover:shadow-inner">
-                        <svg class="w-5 h-5 text-white group-hover:text-[#e5142d] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</header>
-
-<header class="lg:hidden fixed top-0 left-0 w-full bg-white z-[200] border-b border-gray-100 h-16 px-6 flex items-center justify-between">
-    <a href="/" class="flex flex-col border-l-2 border-[#e5142d] pl-3">
-        <span class="text-lg font-black tracking-tighter text-[#001A3D] leading-none">CEN<span class="text-[#e5142d]">DAE</span></span>
-    </a>
-    
-    <button onclick="toggleMobileMenu()" class="w-10 h-10 flex items-center justify-center bg-gray-50 rounded-full text-[#001A3D]">
-        <svg id="mobile-menu-icon" class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-    </button>
-</header>
-
-<div id="mobile-menu" class="lg:hidden fixed inset-0 bg-white/95 backdrop-blur-2xl z-[190] transform translate-y-[-100%] transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] flex flex-col pt-32 px-8 overflow-hidden">
-    <div class="absolute -top-20 -right-20 w-80 h-80 bg-[#e5142d]/5 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute top-40 -left-20 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
-    
-    <nav class="relative z-10 flex flex-col gap-10">
-        <div class="flex flex-col gap-6">
-            <a href="#inicio" onclick="toggleMobileMenu()" class="group flex items-center justify-between">
                 <div class="flex flex-col">
-                    <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#e5142d] mb-1">Volver a</span>
-                    <span class="text-2xl font-light tracking-tight text-[#001A3D] group-hover:translate-x-2 transition-transform duration-300">Inicio</span>
-                </div>
-                <div class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-gray-50 transition-colors">
-                    <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="text-2xl font-black leading-none tracking-[-0.05em] text-white lg:text-3xl">
+                        CEN<span class="text-[#e5142d]">DAE</span>
+                    </span>
+                    <span class="mt-1 text-[10px] font-bold uppercase tracking-[0.35em] text-white/40">
+                        Ciencia de Datos
+                    </span>
                 </div>
             </a>
-            <a href="#cursos" onclick="toggleMobileMenu()" class="group flex items-center justify-between">
-                <div class="flex flex-col">
-                    <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#e5142d] mb-1">Explorar</span>
-                    <span class="text-2xl font-light tracking-tight text-[#001A3D] group-hover:translate-x-2 transition-transform duration-300">Cursos</span>
-                </div>
-                <div class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-gray-50 transition-colors">
-                    <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-            </a>
-        </div>
-        <div class="h-px bg-gradient-to-r from-gray-100 via-gray-200 to-transparent"></div>
-    </nav>
 
-    <div class="mt-auto mb-16 relative z-10">
-        <a href="https://intranet.cendae.pe/login/index.php" target="_blank" class="group block relative">
-            <div class="absolute inset-0 bg-[#001A3D] rounded-2xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity"></div>
-            <div class="relative bg-[#001A3D] rounded-2xl p-6 flex items-center justify-between overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                        </svg>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-[9px] font-black uppercase tracking-[0.3em] text-white/50">Estudiantes</span>
-                        <span class="text-lg font-bold text-white tracking-wide">Aula Virtual</span>
-                    </div>
-                </div>
-                <div class="w-10 h-10 bg-[#e5142d] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-            </div>
-        </a>
-        <p class="text-center mt-8 text-[9px] font-bold text-gray-300 uppercase tracking-[0.6em]">Cendae • Ciencia de Datos</p>
-    </div>
-</div>
-
-<div id="orbital-container" class="hidden lg:block fixed top-0 left-0 z-[200] collapsed invisible -translate-x-20 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]">
-    <div id="moon-body" class="relative bg-white w-[520px] h-[520px] rounded-br-full shadow-[40px_40px_90px_rgba(0,26,61,0.18)] border-r border-b border-gray-100 flex flex-col items-start justify-start transition-all duration-700">
-        <div id="mini-logo-container" class="absolute left-4 top-4 w-20 h-20 opacity-0 transition-all duration-500 transform scale-50 pointer-events-none flex items-center justify-center">
-            <img src="{% static 'img/logo.png' %}" alt="Logo" class="w-full h-full object-contain p-2">
-        </div>
-        <button onclick="toggleOrbital()" class="toggle-btn absolute bg-[#001A3D] text-white w-14 h-14 rounded-full hover:bg-[#e5142d] transition-all duration-500 shadow-2xl z-[210] flex items-center justify-center border-4 border-white active:scale-90">
-            <svg id="toggle-icon" class="w-6 h-6 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path id="icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-        <div id="orbital-content" class="mt-20 ml-20 flex flex-col gap-8 opacity-100 transition-all duration-500">
-            <div class="bg-white w-24 h-24 rounded-[2.5rem] flex items-center justify-center mb-6 shadow-xl transform -rotate-6">
-                <img src="{% static 'img/logo.png' %}" alt="CENDAE" class="w-24 h-24 object-contain">
-            </div>
-            <nav class="flex flex-col gap-5">
-                <a href="#inicio" onclick="toggleOrbital()" class="nav-item flex items-center gap-4 text-sm font-black uppercase tracking-widest text-gray-400 hover:text-[#001A3D] transition-all group">
-                    <span class="w-8 h-[2px] bg-gray-100 group-hover:bg-[#e5142d] group-hover:w-12 transition-all line-decorator"></span> Inicio
-                </a>
-                <a href="#cursos" onclick="toggleOrbital()" class="nav-item flex items-center gap-4 text-sm font-black uppercase tracking-widest text-gray-400 hover:text-[#001A3D] transition-all group">
-                    <span class="w-8 h-[2px] bg-gray-100 group-hover:bg-[#e5142d] group-hover:w-12 transition-all line-decorator"></span> Cursos
-                </a>
+            <nav class="hidden items-center gap-2 lg:flex">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#cursos" class="nav-link">Cursos</a>
             </nav>
-            <div class="mt-8">
-                <a href="https://intranet.cendae.pe/login/index.php" target="_blank" class="group relative flex items-center justify-center w-36 h-36">
-                    <div class="absolute inset-0 bg-[#001A3D] rounded-full group-hover:bg-[#e5142d] transition-all duration-500"></div>
-                    <div class="relative flex flex-col items-center gap-2 text-white">
-                        <span class="text-[10px] font-black uppercase tracking-widest">Aula Virtual</span>
+
+            <div class="hidden items-center gap-5 lg:flex">
+                <div class="flex items-center gap-3 border-l border-white/10 pl-6">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60"></span>
+                        <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+                    </span>
+                    <div class="flex flex-col">
+                        <span class="text-[9px] font-black uppercase tracking-[0.28em] text-white/35">Estado</span>
+                        <span class="text-xs font-bold text-white/80">Admisión 2026</span>
                     </div>
+                </div>
+
+                <a href="https://intranet.cendae.pe/login/index.php"
+                   target="_blank"
+                   rel="noopener"
+                   class="group relative inline-flex items-center gap-4 overflow-hidden bg-white px-6 py-3.5 text-sm font-black text-[#001A3D] transition-all duration-500 hover:bg-[#e5142d] hover:text-white">
+
+                    <span class="absolute inset-0 translate-x-[-120%] bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-[120%]"></span>
+
+                    <span class="relative">Aula Virtual</span>
+
+                    <span class="relative flex h-8 w-8 items-center justify-center bg-[#001A3D] text-white transition group-hover:bg-white group-hover:text-[#e5142d]">
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                  d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </span>
                 </a>
             </div>
+
+            <button type="button"
+                    onclick="toggleMobileMenu()"
+                    class="relative flex h-12 w-12 items-center justify-center border border-white/15 bg-white/10 text-white lg:hidden">
+                <svg id="mobile-menu-icon" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                          d="M4 7h16M4 12h16M4 17h16"/>
+                </svg>
+            </button>
         </div>
+    </div>
+</header>
+
+<div id="mobile-menu"
+     class="fixed inset-0 z-[190] translate-y-[-100%] bg-[#020817]/98 px-6 pt-28 backdrop-blur-2xl transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] lg:hidden">
+
+    <div class="pointer-events-none absolute inset-0 overflow-hidden">
+        <div class="absolute -right-32 top-10 h-80 w-80 bg-[#e5142d]/15 blur-3xl"></div>
+        <div class="absolute -left-32 bottom-20 h-80 w-80 bg-blue-500/10 blur-3xl"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-md">
+        <span class="text-[10px] font-black uppercase tracking-[0.45em] text-[#e5142d]">
+            Navegación
+        </span>
+
+        <nav class="mt-8 flex flex-col border-y border-white/10">
+            <a href="#inicio" onclick="toggleMobileMenu()" class="mobile-link">
+                <span>Inicio</span>
+                <small>01</small>
+            </a>
+
+            <a href="#cursos" onclick="toggleMobileMenu()" class="mobile-link">
+                <span>Cursos</span>
+                <small>02</small>
+            </a>
+        </nav>
+
+        <a href="https://intranet.cendae.pe/login/index.php"
+           target="_blank"
+           rel="noopener"
+           class="group mt-10 flex items-center justify-between bg-white p-5 text-[#001A3D]">
+            <div>
+                <span class="text-[10px] font-black uppercase tracking-[0.32em] text-[#e5142d]">
+                    Estudiantes
+                </span>
+                <p class="mt-1 text-xl font-black tracking-tight">Ingresar al Aula Virtual</p>
+            </div>
+
+            <span class="flex h-12 w-12 items-center justify-center bg-[#001A3D] text-white transition group-hover:bg-[#e5142d]">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </a>
     </div>
 </div>
 
 <style>
-    @keyframes scan {
-        0% { transform: translateX(-150%); opacity: 0; }
-        50% { opacity: 1; }
-        100% { transform: translateX(350%); opacity: 0; }
+    .nav-link {
+        position: relative;
+        overflow: hidden;
+        padding: 14px 22px;
+        font-size: 13px;
+        font-weight: 800;
+        color: rgba(255, 255, 255, .62);
+        letter-spacing: .02em;
+        transition: all .35s ease;
     }
-    .header-compact {
-        width: 100% !important;
-        top: 0 !important;
-        max-width: none !important;
-        border-radius: 0 !important;
+
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, .08);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .35s ease;
     }
-    #mobile-menu.active { transform: translateY(0); }
-    .text-2xl { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
-    #header-traditional.scrolled { transform: translateY(-100%); opacity: 0; }
-    #orbital-container.visible { visibility: visible; transform: translateX(0); }
-    #orbital-container.collapsed #moon-body { width: 140px; height: 140px; transform: translate(-15px, -15px); }
-    #orbital-container.collapsed #mini-logo-container { opacity: 1; transform: scale(1); }
-    #orbital-container.collapsed .toggle-btn { top: 80px; right: 15px; width: 45px; height: 45px; background: #e5142d; }
-    #orbital-container.collapsed #orbital-content { opacity: 0; visibility: hidden; }
-    #orbital-container:not(.collapsed) #icon-path { d: path("M6 18L18 6M6 6l12 12"); }
-    .toggle-btn { top: 40px; right: 40px; }
+
+    .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 22px;
+        right: 22px;
+        bottom: 8px;
+        height: 2px;
+        background: #e5142d;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .35s ease;
+    }
+
+    .nav-link:hover {
+        color: white;
+    }
+
+    .nav-link:hover::before,
+    .nav-link:hover::after {
+        transform: scaleX(1);
+    }
+
+    .mobile-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 0;
+        color: white;
+        font-size: 32px;
+        font-weight: 900;
+        letter-spacing: -0.05em;
+        border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .mobile-link small {
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: .35em;
+        color: rgba(255,255,255,.28);
+    }
+
+    #mobile-menu.active {
+        transform: translateY(0);
+    }
+
+    #main-header.header-scrolled #header-shell {
+        background: rgba(2, 8, 23, .94);
+        box-shadow: 0 24px 60px -35px rgba(0,0,0,.8);
+    }
+
+    #main-header.header-scrolled .relative.flex.h-\[86px\] {
+        height: 74px;
+    }
 </style>
 
 <script>
-    // Lógica General Scroll y Menús
-    const headerTraditional = document.getElementById('header-traditional');
-    const orbitalContainer = document.getElementById('orbital-container');
+    const mainHeader = document.getElementById('main-header');
 
-    window.addEventListener('scroll', function() {
-        // Efecto scroll header tradicional
-        const content = headerTraditional.firstElementChild;
-        if (window.scrollY > 40) {
-            headerTraditional.classList.add('top-0', 'w-full', 'max-w-none');
-            content.classList.remove('rounded-lg', 'top-6');
-            content.classList.add('rounded-none', 'border-x-0', 'border-t-0', 'bg-white/95');
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 24) {
+            mainHeader.classList.add('header-scrolled');
         } else {
-            headerTraditional.classList.remove('top-0', 'w-full', 'max-w-none');
-            content.classList.add('rounded-lg');
-            content.classList.remove('rounded-none', 'border-x-0', 'border-t-0', 'bg-white/95');
-        }
-
-        // Lógica Desktop Orbital
-        if (window.innerWidth > 1024) {
-            if (window.scrollY > 80) {
-                headerTraditional.classList.add('scrolled');
-                orbitalContainer.classList.add('visible');
-            } else {
-                headerTraditional.classList.remove('scrolled');
-                orbitalContainer.classList.remove('visible');
-                orbitalContainer.classList.add('collapsed'); 
-            }
+            mainHeader.classList.remove('header-scrolled');
         }
     });
-
-    function toggleOrbital() { 
-        orbitalContainer.classList.toggle('collapsed'); 
-    }
 
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         const icon = document.getElementById('mobile-menu-icon');
+
         menu.classList.toggle('active');
-        if(menu.classList.contains('active')) {
-            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+
+        if (menu.classList.contains('active')) {
+            icon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                      d="M6 18L18 6M6 6l12 12"/>
+            `;
         } else {
-            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>';
+            icon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                      d="M4 7h16M4 12h16M4 17h16"/>
+            `;
         }
     }
 </script>

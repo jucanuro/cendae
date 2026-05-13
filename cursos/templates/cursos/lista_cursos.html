@@ -1,317 +1,482 @@
 {% load static %}
-<section id="cursos" class="relative py-24 bg-slate-50 overflow-hidden font-['Plus_Jakarta_Sans',_sans-serif]">
-    
-    <div class="absolute top-0 left-0 w-full h-16 pointer-events-none z-20">
-        <div class="absolute top-0 left-[45%] w-[10%] h-full bg-[#ff0022] clip-path-pieza shadow-lg"></div>
-        <div class="absolute top-0 left-0 w-full h-[2px] bg-[#ff0022]/10"></div>
-    </div>
 
-    <div class="container mx-auto px-6 lg:px-20 relative z-10">
-        
-        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 border-b border-slate-200 pb-8">
-            <div class="space-y-2">
-                <div class="flex items-center gap-3 mb-2">
-                    <span class="px-2 py-0.5 bg-[#ff0022] text-white text-[8px] font-black uppercase tracking-tighter">Premium</span>
-                    <span class="text-[9px] font-bold uppercase tracking-[0.4em] text-slate-400">Selección 2026</span>
-                </div>
-                <h2 class="text-5xl font-black text-[#00112b] tracking-tighter uppercase leading-none">
-                    Catálogo <span class="text-[#ff0022]/40 italic font-light">Especializado</span>
-                </h2>
-            </div>
-            
-            <button onclick="openCatalogModal()" class="group flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-[#00112b] hover:text-[#ff0022] transition-all">
-                Explorar programas
-                <div class="w-12 h-12 bg-white border border-slate-200 flex items-center justify-center group-hover:bg-[#ff0022] group-hover:border-[#ff0022] group-hover:text-white transition-all shadow-sm">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </div>
-            </button>
+<section id="cursos"
+         class="relative overflow-hidden bg-[#f8fafc] py-4 font-['Plus_Jakarta_Sans',sans-serif] lg:py-6">
+
+    <div class="pointer-events-none absolute inset-0">
+        <div class="absolute left-0 top-0 h-full w-[76px] bg-[#e5142d] hidden xl:block"></div>
+        <div class="absolute left-[76px] top-0 h-full w-px bg-slate-200 hidden xl:block"></div>
+
+        <div class="absolute inset-0 opacity-[0.045]"
+             style="background-image: linear-gradient(#001A3D 1px, transparent 1px), linear-gradient(90deg, #001A3D 1px, transparent 1px); background-size: 54px 54px;">
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
-            {% for curso in cursos|slice:":4" %}
-            <div class="group relative flex flex-col cursor-pointer" onclick="cargarDetalleModal('{{ curso.slug }}')">
-                
-                <div class="relative mb-6">
-                    <div class="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-[#ff0022] opacity-0 group-hover:opacity-100 transition-all duration-500 z-10"></div>
-                    
-                    <div class="relative aspect-[3/4] w-full bg-white overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] transition-transform duration-500 group-hover:-translate-y-2">
-                        <img src="{{ curso.portada.url }}" 
-                             class="w-full h-full object-cover grayscale-[0.8] group-hover:grayscale-0 transition-all duration-700"
-                             alt="{{ curso.titulo }}">
-                        
-                        <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-white via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        
-                        <div class="absolute top-6 -left-1">
-                            <span class="bg-[#00112b] text-white text-[7px] font-black px-3 py-1 uppercase tracking-widest vertical-text">
-                                {{ curso.get_nivel_display }}
-                            </span>
-                        </div>
-                    </div>
+        <div class="absolute -left-40 top-10 h-96 w-96 bg-[#e5142d]/8 blur-3xl"></div>
+        <div class="absolute right-0 bottom-0 h-[520px] w-[520px] bg-blue-500/6 blur-3xl"></div>
+    </div>
+
+    <div class="relative z-10 w-full px-5 sm:px-8 lg:px-16 xl:pl-36 xl:pr-20">
+
+        <div class="mb-12 grid gap-8 lg:grid-cols-12 lg:items-end">
+            <div class="lg:col-span-7">
+                <div class="mb-5 inline-flex items-center gap-4 border border-slate-200 bg-white px-5 py-3 shadow-sm">
+                    <span class="h-2 w-2 bg-[#e5142d]"></span>
+                    <span class="text-[10px] font-black uppercase tracking-[0.42em] text-[#e5142d]">
+                        Selección académica 2026
+                    </span>
                 </div>
 
-                <div class="flex flex-col space-y-3 px-2">
-                    <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-bold text-slate-300">#0{{ forloop.counter }} / DATA</span>
-                        <span class="text-xs font-black text-[#00112b]">S/ {{ curso.precio_principal }}</span>
-                    </div>
+                <h2 class="max-w-5xl text-[clamp(3.2rem,6vw,7rem)] font-black leading-[0.82] tracking-[-0.08em] text-[#001A3D]">
+                    Catálogo especializado.
+                </h2>
+            </div>
 
-                    <h3 class="text-base font-black text-[#00112b] leading-[1.2] uppercase tracking-tighter group-hover:text-[#ff0022] transition-colors">
-                        {{ curso.titulo }}
-                    </h3>
-
-                    <p class="text-[11px] text-slate-500 leading-relaxed font-medium line-clamp-2">
-                        {{ curso.descripcion|truncatechars:70 }}
+            <div class="lg:col-span-5">
+                <div class="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-end">
+                    <p class="max-w-md border-l border-slate-300 pl-6 text-sm leading-7 text-slate-500">
+                        Programas diseñados para dominar datos, programación y analítica aplicada con enfoque práctico, profesional y orientado al mercado.
                     </p>
 
-                    <div class="flex items-center justify-between pt-4 mt-2 border-t border-slate-100">
-                        <div class="flex items-center gap-2">
-                            <div class="w-5 h-5 bg-slate-200 grayscale group-hover:grayscale-0 transition-all">
-                                <img src="{{ curso.instructor.foto.url }}" class="w-full h-full object-cover">
-                            </div>
-                            <span class="text-[8px] font-bold text-slate-400 uppercase">
-                                {{ curso.instructor.nombre|truncatechars:15 }}
+                    <button onclick="openCatalogModal()"
+                            class="group inline-flex items-center justify-between bg-[#001A3D] px-6 py-5 text-left text-white shadow-[0_24px_70px_-48px_rgba(0,26,61,0.95)] transition duration-500 hover:bg-[#e5142d]">
+                        <div>
+                            <span class="block text-[9px] font-black uppercase tracking-[0.35em] text-white/40">
+                                Catálogo
+                            </span>
+                            <span class="mt-1 block text-xs font-black uppercase tracking-[0.18em]">
+                                Ver todo
                             </span>
                         </div>
-                        <span class="text-[9px] font-black text-[#ff0022]">{{ curso.horas_certificacion }}H</span>
-                    </div>
+
+                        <span class="ml-8 flex h-11 w-11 items-center justify-center bg-white/10 transition group-hover:bg-white group-hover:text-[#e5142d]">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                      d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </span>
+                    </button>
                 </div>
             </div>
-            {% endfor %}
-        </div>
-    </div>
-
-    <div class="absolute bottom-0 left-0 w-full h-16 bg-white" 
-         style="clip-path: polygon(0 100%, 100% 100%, 100% 0, 60% 0, 50% 100%, 0 100%);">
-    </div>
-
-</section>
-
-<style>
-    .clip-path-pieza {
-        clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
-    }
-    .vertical-text {
-        writing-mode: vertical-lr;
-        transform: rotate(180deg);
-    }
-</style>
-
-<div id="catalogModal" class="fixed inset-0 z-[150] hidden items-center justify-center p-4">
-    <div class="absolute inset-0 bg-[#00112b]/95 backdrop-blur-md transition-opacity duration-500" onclick="closeCatalogModal()"></div>
-    
-    <div class="relative bg-slate-50 w-full max-w-6xl h-[92vh] overflow-hidden flex flex-col shadow-[0_50px_100px_-20px_rgba(0,0,0,0.6)] border-l-4 border-[#ff0022]"
-         style="clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 100%, 5% 100%, 0 95%);">
-        
-        <div class="relative px-12 py-10 border-b border-slate-200 flex justify-between items-center bg-white z-20">
-            <div class="absolute top-0 right-0 w-64 h-full pointer-events-none">
-                <div class="absolute inset-0 bg-slate-50" style="clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);"></div>
-            </div>
-
-            <div class="relative z-10">
-                <div class="flex items-center gap-3 mb-2">
-                    <span class="w-8 h-[1px] bg-[#ff0022]"></span>
-                    <span class="text-[9px] font-black text-[#ff0022] uppercase tracking-[0.5em]">Academic Database</span>
-                </div>
-                <h2 class="text-4xl md:text-5xl font-black text-[#00112b] tracking-tighter leading-none uppercase">
-                    Catálogo <span class="text-slate-300">Completo</span>
-                </h2>
-            </div>
-            
-            <button onclick="closeCatalogModal()" class="group relative z-10 flex items-center justify-center w-14 h-14 bg-[#00112b] transition-all duration-500 hover:bg-[#ff0022]">
-                <svg class="w-6 h-6 text-white group-hover:rotate-90 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </button>
         </div>
 
-        <div class="flex-grow overflow-y-auto custom-scrollbar bg-white relative">
-            <div class="sticky top-0 z-30 grid grid-cols-12 px-12 py-4 bg-slate-50 border-b border-slate-200 text-[10px] font-black text-[#00112b] uppercase tracking-[0.2em]">
-                <div class="col-span-1">Ref.</div>
-                <div class="col-span-6 md:col-span-7">Especialización / Programa</div>
-                <div class="col-span-2 text-center">Nivel</div>
-                <div class="col-span-3 md:col-span-2 text-right">Inversión</div>
-            </div>
+        <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
+            {% for curso in cursos|slice:":4" %}
+            <article onclick="cargarDetalleModal('{{ curso.slug }}')"
+                     class="group relative cursor-pointer overflow-hidden border border-slate-200 bg-white shadow-sm transition duration-500 hover:border-[#e5142d]/40 hover:shadow-[0_35px_90px_-55px_rgba(15,23,42,0.85)]">
 
-            <div class="divide-y divide-slate-100 px-8">
-                {% for curso in cursos %}
-                <div class="group grid grid-cols-12 items-center px-4 py-6 hover:bg-slate-50 transition-all duration-300 cursor-pointer opacity-0 translate-y-[10px]"
-                     style="animation: rowFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; animation-delay: {{ forloop.counter0 }}00ms;"
-                     onclick="closeCatalogModal(); cargarDetalleModal('{{ curso.slug }}')">
-                    
-                    <div class="col-span-1">
-                        <span class="text-[10px] font-mono font-bold text-slate-300 group-hover:text-[#ff0022] transition-colors">#0{{ forloop.counter }}</span>
-                    </div>
+                <div class="grid min-h-[320px] grid-cols-1 md:grid-cols-[42%_58%]">
 
-                    <div class="col-span-6 md:col-span-7 flex items-center gap-6">
-                        <div class="hidden sm:block w-14 h-14 bg-slate-100 overflow-hidden border border-slate-200 group-hover:border-[#ff0022] transition-colors">
-                            <img src="{{ curso.portada.url }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                    <div class="relative min-h-[230px] overflow-hidden bg-[#001A3D]">
+                        <img src="{{ curso.portada.url }}"
+                             alt="{{ curso.titulo }}"
+                             class="h-full w-full object-cover grayscale-[.65] transition duration-700 group-hover:scale-105 group-hover:grayscale-0">
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#020817]/90 via-[#020817]/25 to-transparent"></div>
+
+                        <div class="absolute left-5 top-5 bg-[#e5142d] px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.22em] text-white">
+                            {{ curso.get_nivel_display }}
                         </div>
+
+                        <div class="absolute bottom-5 left-5 right-5">
+                            <span class="text-[10px] font-black uppercase tracking-[0.35em] text-white/45">
+                                Programa #0{{ forloop.counter }}
+                            </span>
+                            <div class="mt-3 h-px w-16 bg-[#e5142d]"></div>
+                        </div>
+                    </div>
+
+                    <div class="relative flex flex-col justify-between p-7">
+                        <div class="absolute right-0 top-0 h-16 w-16 border-r border-t border-slate-200 transition group-hover:border-[#e5142d]/50"></div>
+
                         <div>
-                            <h4 class="text-base font-black text-[#00112b] tracking-tight leading-tight uppercase group-hover:text-[#ff0022] transition-colors">
+                            <h3 class="max-w-md text-3xl font-black leading-[0.95] tracking-[-0.055em] text-[#001A3D] transition group-hover:text-[#e5142d]">
                                 {{ curso.titulo }}
-                            </h4>
-                            <div class="flex items-center gap-2 mt-1">
-                                <span class="text-[9px] text-slate-400 font-bold uppercase tracking-widest">{{ curso.instructor.nombre }}</span>
+                            </h3>
+
+                            <p class="mt-5 text-sm leading-7 text-slate-500">
+                                {{ curso.descripcion|truncatechars:130 }}
+                            </p>
+                        </div>
+
+                        <div class="mt-8">
+                            <div class="mb-5 grid grid-cols-2 gap-3">
+                                <div class="border border-slate-100 bg-slate-50 p-4">
+                                    <span class="block text-[9px] font-black uppercase tracking-[0.25em] text-slate-400">
+                                        Inversión
+                                    </span>
+                                    <strong class="mt-1 block text-xl font-black tracking-[-0.05em] text-[#001A3D]">
+                                        S/ {{ curso.precio_principal }}
+                                    </strong>
+                                </div>
+
+                                <div class="border border-slate-100 bg-slate-50 p-4">
+                                    <span class="block text-[9px] font-black uppercase tracking-[0.25em] text-slate-400">
+                                        Duración
+                                    </span>
+                                    <strong class="mt-1 block text-xl font-black tracking-[-0.05em] text-[#e5142d]">
+                                        {{ curso.horas_certificacion }}H
+                                    </strong>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-between border-t border-slate-100 pt-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="h-10 w-10 overflow-hidden bg-slate-100">
+                                        <img src="{{ curso.instructor.foto.url }}"
+                                             alt="{{ curso.instructor.nombre }}"
+                                             class="h-full w-full object-cover">
+                                    </div>
+                                    <div>
+                                        <span class="block text-[9px] font-black uppercase tracking-[0.22em] text-slate-400">
+                                            Instructor
+                                        </span>
+                                        <span class="block max-w-[170px] truncate text-xs font-bold text-[#001A3D]">
+                                            {{ curso.instructor.nombre }}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <span class="flex h-11 w-11 items-center justify-center bg-[#001A3D] text-white transition group-hover:bg-[#e5142d]">
+                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                              d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </span>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-span-2 flex justify-center">
-                        <span class="text-[9px] font-black text-slate-500 uppercase px-3 py-1 bg-white border border-slate-200 group-hover:border-[#00112b] group-hover:text-[#00112b] transition-all">
-                            {{ curso.get_nivel_display }}
-                        </span>
-                    </div>
-
-                    <div class="col-span-3 md:col-span-2 flex items-center justify-end gap-6">
-                        <span class="text-base font-black text-[#00112b] tracking-tighter">S/ {{ curso.precio_principal }}</span>
-                        <div class="w-8 h-8 flex items-center justify-center border border-slate-200 group-hover:bg-[#00112b] group-hover:text-white transition-all">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="square" stroke-width="2" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </div>
-                    </div>
                 </div>
-                {% endfor %}
-            </div>
+            </article>
+            {% endfor %}
         </div>
-        
-        <div class="px-12 py-6 bg-slate-50 border-t border-slate-200 flex justify-between items-center z-20">
-            <div class="flex items-center gap-4">
-                <div class="px-2 py-1 bg-[#00112b] text-white text-[9px] font-black uppercase tracking-widest">
-                    {{ cursos|length }} Items
-                </div>
-                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Base de datos actualizada 2026</span>
+
+    </div>
+</section>
+
+<div id="catalogModal" class="fixed inset-0 z-[250] hidden items-center justify-center p-0 lg:p-6">
+    <div class="absolute inset-0 bg-[#020817]/95 backdrop-blur-xl" onclick="closeCatalogModal()"></div>
+
+    <div class="relative flex h-screen w-full overflow-hidden bg-[#f8fafc] shadow-[0_50px_120px_-40px_rgba(0,0,0,.9)] lg:h-[92vh] lg:max-w-[1500px] lg:border lg:border-white/10">
+
+        <aside class="relative hidden w-[300px] shrink-0 overflow-hidden bg-[#001A3D] p-8 text-white xl:block">
+            <div class="absolute inset-0 opacity-[0.08]"
+                 style="background-image: linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px); background-size: 42px 42px;">
             </div>
-            <div class="hidden md:flex items-center gap-2">
-                <span class="text-[8px] font-black text-[#ff0022] uppercase tracking-[0.4em]">Cendae Technical Systems</span>
+
+            <div class="relative z-10 flex h-full flex-col justify-between">
+                <div>
+                    <span class="inline-flex h-2 w-2 bg-[#e5142d]"></span>
+
+                    <h2 class="mt-8 text-5xl font-black leading-[0.85] tracking-[-0.07em]">
+                        Catálogo<br>
+                        completo.
+                    </h2>
+
+                    <p class="mt-6 text-sm leading-7 text-white/50">
+                        Explora todos los programas disponibles y selecciona la ruta que mejor encaja con tu perfil profesional.
+                    </p>
+                </div>
+
+                <div class="space-y-5">
+                    <div class="border border-white/10 bg-white/5 p-5">
+                        <span class="block text-[10px] font-black uppercase tracking-[0.35em] text-white/35">
+                            Programas
+                        </span>
+                        <strong class="mt-2 block text-4xl font-black tracking-[-0.06em]">
+                            {{ cursos|length }}
+                        </strong>
+                    </div>
+
+                    <div class="text-[10px] font-black uppercase tracking-[0.38em] text-[#e5142d]">
+                        CENDAE · 2026
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="flex min-w-0 flex-1 flex-col">
+            <div class="relative border-b border-slate-200 bg-white px-5 py-5 sm:px-8 lg:px-10">
+                <div class="pointer-events-none absolute inset-0 opacity-[0.04]"
+                     style="background-image: linear-gradient(#001A3D 1px, transparent 1px), linear-gradient(90deg, #001A3D 1px, transparent 1px); background-size: 44px 44px;">
+                </div>
+
+                <div class="relative z-10 flex items-start justify-between gap-6">
+                    <div>
+                        <div class="mb-3 flex items-center gap-3">
+                            <span class="h-2 w-2 bg-[#e5142d]"></span>
+                            <span class="text-[10px] font-black uppercase tracking-[0.42em] text-[#e5142d]">
+                                Academic Database
+                            </span>
+                        </div>
+
+                        <h2 class="text-3xl font-black leading-none tracking-[-0.06em] text-[#001A3D] sm:text-5xl">
+                            Programas disponibles
+                        </h2>
+
+                        <p class="mt-3 max-w-2xl text-sm leading-6 text-slate-500">
+                            Selecciona un curso para ver detalle, temario, inversión e información del instructor.
+                        </p>
+                    </div>
+
+                    <button onclick="closeCatalogModal()"
+                            class="group flex h-12 w-12 shrink-0 items-center justify-center bg-[#001A3D] text-white transition hover:bg-[#e5142d] sm:h-14 sm:w-14">
+                        <svg class="h-6 w-6 transition duration-500 group-hover:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                  d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="custom-scrollbar flex-1 overflow-y-auto bg-[#f8fafc] p-5 sm:p-8 lg:p-10">
+                <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
+                    {% for curso in cursos %}
+                    <article onclick="closeCatalogModal(); cargarDetalleModal('{{ curso.slug }}')"
+                             class="catalog-course-card group relative cursor-pointer overflow-hidden border border-slate-200 bg-white shadow-sm transition duration-500 hover:-translate-y-1 hover:border-[#e5142d]/40 hover:shadow-[0_30px_80px_-55px_rgba(15,23,42,.85)]"
+                             style="animation-delay: {{ forloop.counter0 }}00ms;">
+
+                        <div class="grid min-h-[260px] grid-cols-1 sm:grid-cols-[210px_1fr]">
+                            <div class="relative min-h-[190px] overflow-hidden bg-[#001A3D]">
+                                <img src="{{ curso.portada.url }}"
+                                     alt="{{ curso.titulo }}"
+                                     class="h-full w-full object-cover grayscale-[.55] transition duration-700 group-hover:scale-105 group-hover:grayscale-0">
+
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#020817]/90 via-[#020817]/25 to-transparent"></div>
+
+                                <span class="absolute left-4 top-4 bg-[#e5142d] px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.22em] text-white">
+                                    {{ curso.get_nivel_display }}
+                                </span>
+
+                                <span class="absolute bottom-4 left-4 text-[10px] font-black uppercase tracking-[0.35em] text-white/45">
+                                    #0{{ forloop.counter }}
+                                </span>
+                            </div>
+
+                            <div class="flex flex-col justify-between p-6">
+                                <div>
+                                    <h3 class="text-2xl font-black leading-[0.98] tracking-[-0.055em] text-[#001A3D] transition group-hover:text-[#e5142d]">
+                                        {{ curso.titulo }}
+                                    </h3>
+
+                                    <p class="mt-4 line-clamp-2 text-sm leading-6 text-slate-500">
+                                        {{ curso.descripcion|truncatechars:120 }}
+                                    </p>
+                                </div>
+
+                                <div class="mt-6">
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <div class="bg-slate-50 p-4">
+                                            <span class="block text-[9px] font-black uppercase tracking-[0.24em] text-slate-400">
+                                                Inversión
+                                            </span>
+                                            <strong class="mt-1 block text-xl font-black tracking-[-0.05em] text-[#001A3D]">
+                                                S/ {{ curso.precio_principal }}
+                                            </strong>
+                                        </div>
+
+                                        <div class="bg-slate-50 p-4">
+                                            <span class="block text-[9px] font-black uppercase tracking-[0.24em] text-slate-400">
+                                                Certificación
+                                            </span>
+                                            <strong class="mt-1 block text-xl font-black tracking-[-0.05em] text-[#e5142d]">
+                                                {{ curso.horas_certificacion }}H
+                                            </strong>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-5 flex items-center justify-between border-t border-slate-100 pt-5">
+                                        <div class="flex min-w-0 items-center gap-3">
+                                            <div class="h-10 w-10 shrink-0 overflow-hidden bg-slate-100">
+                                                <img src="{{ curso.instructor.foto.url }}"
+                                                     alt="{{ curso.instructor.nombre }}"
+                                                     class="h-full w-full object-cover">
+                                            </div>
+                                            <div class="min-w-0">
+                                                <span class="block text-[9px] font-black uppercase tracking-[0.22em] text-slate-400">
+                                                    Instructor
+                                                </span>
+                                                <span class="block truncate text-xs font-bold text-[#001A3D]">
+                                                    {{ curso.instructor.nombre }}
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <span class="flex h-10 w-10 shrink-0 items-center justify-center bg-[#001A3D] text-white transition group-hover:bg-[#e5142d]">
+                                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                                      d="M9 5l7 7-7 7"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between border-t border-slate-200 bg-white px-5 py-4 sm:px-8 lg:px-10">
+                <div class="flex items-center gap-3">
+                    <span class="bg-[#001A3D] px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.25em] text-white">
+                        {{ cursos|length }} programas
+                    </span>
+                    <span class="hidden text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400 sm:inline">
+                        Base académica actualizada 2026
+                    </span>
+                </div>
+
+                <span class="hidden text-[9px] font-black uppercase tracking-[0.35em] text-[#e5142d] md:block">
+                    CENDAE Technical Systems
+                </span>
             </div>
         </div>
     </div>
 </div>
 
 <style>
-    /* Scrollbar técnica y fina */
-    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-    .custom-scrollbar::-webkit-scrollbar-track { background: #f8fafc; }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; }
-    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #ff0022; }
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+    }
 
-    @keyframes rowFadeIn {
-        from { opacity: 0; transform: translateY(15px); }
-        to { opacity: 1; transform: translateY(0); }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f1f5f9;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #e5142d;
+    }
+
+    .catalog-course-card {
+        opacity: 0;
+        transform: translateY(18px);
+        animation: catalogCardIn .7s cubic-bezier(.16, 1, .3, 1) forwards;
+    }
+
+    @keyframes catalogCardIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 </style>
 
 <script>
-// --- FUNCIONES DEL CATÁLOGO ---
-function openCatalogModal() {
-    const catalogModal = document.getElementById('catalogModal');
-    catalogModal.classList.remove('hidden');
-    catalogModal.classList.add('flex');
-    document.body.style.overflow = 'hidden'; // Bloquea scroll
-}
-
-function closeCatalogModal() {
-    const catalogModal = document.getElementById('catalogModal');
-    catalogModal.classList.add('hidden');
-    catalogModal.classList.remove('flex');
-    // Solo rehabilitar scroll si el otro modal tampoco está abierto
-    if (document.getElementById('cursoModal').classList.contains('hidden')) {
-        document.body.style.overflow = 'auto';
+    function openCatalogModal() {
+        const catalogModal = document.getElementById('catalogModal');
+        catalogModal.classList.remove('hidden');
+        catalogModal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
     }
-}
 
-// --- FUNCIONES DE DETALLE (EXISTENTES MEJORADAS) ---
-function cargarDetalleModal(slug) {
-    const modal = document.getElementById('cursoModal');
-    const el = (id) => document.getElementById(id);
+    function closeCatalogModal() {
+        const catalogModal = document.getElementById('catalogModal');
+        if (!catalogModal) return;
 
-    // Si abrimos un detalle desde el catálogo, aseguramos que el catálogo se cierre primero
-    closeCatalogModal();
+        catalogModal.classList.add('hidden');
+        catalogModal.classList.remove('flex');
 
-    fetch(`/cursos/api/curso/${slug}/`)
-        .then(response => response.json())
-        .then(data => {
-            el('modal-titulo').innerText = data.titulo;
-            el('modal-descripcion').innerText = data.descripcion;
-            el('modal-precio').innerText = `S/ ${data.precio}`;
-            el('modal-nivel').innerText = data.detalles.nivel;
-            el('modal-instructor-nombre').innerText = data.instructor.nombre;
-            el('modal-instructor-cargo').innerText = data.instructor.titulo;
-            el('modal-instructor-foto').src = data.instructor.foto;
+        const cursoModal = document.getElementById('cursoModal');
+        if (!cursoModal || cursoModal.classList.contains('hidden')) {
+            document.body.style.overflow = 'auto';
+        }
+    }
 
-            const msg = encodeURIComponent(`Hola, solicito información detallada del curso: ${data.titulo}`);
-            el('modal-whatsapp').href = `https://wa.me/51942389557?text=${msg}`;
+    function cargarDetalleModal(slug) {
+        const modal = document.getElementById('cursoModal');
+        const el = (id) => document.getElementById(id);
 
-            // Renderizado de Temario
-            const container = el('modal-temario');
-            container.innerHTML = data.temario.map((modulo, idx) => `
-                <div class="accordion-item border border-slate-100 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-sm">
-                    <div onclick="toggleAccordion(this)" 
-                         class="py-5 flex justify-between items-center cursor-pointer px-6 hover:bg-slate-50/50 transition-colors group">
-                        <div class="flex items-center gap-4">
-                            <span class="text-[10px] font-black text-slate-300 group-hover:text-blue-600 transition-colors tracking-tighter">/0${idx + 1}</span>
-                            <h4 class="text-xs font-bold text-slate-700 uppercase tracking-tight">${modulo.titulo}</h4>
+        closeCatalogModal();
+
+        fetch(`/cursos/api/curso/${slug}/`)
+            .then(response => response.json())
+            .then(data => {
+                el('modal-titulo').innerText = data.titulo;
+                el('modal-descripcion').innerText = data.descripcion;
+                el('modal-precio').innerText = `S/ ${data.precio}`;
+                el('modal-nivel').innerText = data.detalles.nivel;
+                el('modal-instructor-nombre').innerText = data.instructor.nombre;
+                el('modal-instructor-cargo').innerText = data.instructor.titulo;
+                el('modal-instructor-foto').src = data.instructor.foto;
+
+                const msg = encodeURIComponent(`Hola, solicito información detallada del curso: ${data.titulo}`);
+                el('modal-whatsapp').href = `https://wa.me/51942389557?text=${msg}`;
+
+                const container = el('modal-temario');
+                container.innerHTML = data.temario.map((modulo, idx) => `
+                    <div class="accordion-item overflow-hidden border border-slate-100 bg-white transition-all duration-300 hover:border-[#e5142d]/20">
+                        <div onclick="toggleAccordion(this)"
+                             class="group flex cursor-pointer items-center justify-between px-6 py-5 transition hover:bg-slate-50">
+                            <div class="flex items-center gap-4">
+                                <span class="text-[10px] font-black tracking-tighter text-slate-300 group-hover:text-[#e5142d]">/0${idx + 1}</span>
+                                <h4 class="text-xs font-bold uppercase tracking-tight text-slate-700">${modulo.titulo}</h4>
+                            </div>
+                            <svg class="icon-chevron h-4 w-4 text-slate-300 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-width="3" d="M19 9l-7 7-7-7"/>
+                            </svg>
                         </div>
-                        <svg class="w-4 h-4 text-slate-300 transition-transform duration-500 icon-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="3" d="M19 9l-7 7-7-7"/></svg>
-                    </div>
-                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-slate-50/30">
-                        <div class="pb-6 pl-14 pr-6 pt-2 space-y-3">
-                            ${modulo.lecciones.map(lec => `
-                                <div class="flex items-center gap-3">
-                                    <div class="w-1.5 h-1.5 rounded-full bg-blue-200"></div>
-                                    <span class="text-[11px] font-medium text-slate-500 uppercase tracking-tight leading-none">${lec}</span>
-                                </div>
-                            `).join('')}
+
+                        <div class="accordion-content max-h-0 overflow-hidden bg-slate-50/60 transition-all duration-500 ease-in-out">
+                            <div class="space-y-3 pb-6 pl-14 pr-6 pt-2">
+                                ${modulo.lecciones.map(lec => `
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-1.5 w-1.5 bg-[#e5142d]/60"></div>
+                                        <span class="text-[11px] font-medium uppercase leading-none tracking-tight text-slate-500">${lec}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
                         </div>
                     </div>
-                </div>
-            `).join('');
-            
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
+                `).join('');
+
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            });
+    }
+
+    function toggleAccordion(element) {
+        const content = element.nextElementSibling;
+        const icon = element.querySelector('.icon-chevron');
+
+        document.querySelectorAll('.accordion-content').forEach(other => {
+            if (other !== content && other.style.maxHeight) {
+                other.style.maxHeight = null;
+                const otherIcon = other.parentElement.querySelector('.icon-chevron');
+                if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+            }
         });
-}
 
-function toggleAccordion(element) {
-    const content = element.nextElementSibling;
-    const icon = element.querySelector('.icon-chevron');
-    
-    document.querySelectorAll('.accordion-content').forEach(other => {
-        if (other !== content && other.style.maxHeight) {
-            other.style.maxHeight = null;
-            const otherIcon = other.parentElement.querySelector('.icon-chevron');
-            if(otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            icon.style.transform = 'rotate(0deg)';
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.style.transform = 'rotate(180deg)';
+        }
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('cursoModal');
+        if (!modal) return;
+
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+
+        const catalogModal = document.getElementById('catalogModal');
+        if (!catalogModal || catalogModal.classList.contains('hidden')) {
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") {
+            closeModal();
+            closeCatalogModal();
         }
     });
-
-    if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-        icon.style.transform = 'rotate(0deg)';
-    } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-        icon.style.transform = 'rotate(180deg)';
-    }
-}
-
-function closeModal() {
-    const modal = document.getElementById('cursoModal');
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-    
-    // Solo rehabilitar scroll si el catálogo tampoco está abierto
-    if (document.getElementById('catalogModal').classList.contains('hidden')) {
-        document.body.style.overflow = 'auto';
-    }
-}
-
-// Cerrar con tecla ESC
-document.addEventListener('keydown', (e) => {
-    if (e.key === "Escape") {
-        closeModal();
-        closeCatalogModal();
-    }
-});
 </script>
-

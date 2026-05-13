@@ -1,86 +1,188 @@
-<section class="relative bg-slate-100 pt-16 pb-32 overflow-hidden font-['Plus_Jakarta_Sans',_sans-serif]">
-    
-    <div class="absolute top-0 right-0 w-1/3 h-full bg-white -skew-x-12 translate-x-1/4 z-0"></div>
+<section class="relative overflow-hidden bg-[#f8fafc] py-4 font-['Plus_Jakarta_Sans',sans-serif] lg:py-6">
 
-    <div class="container mx-auto px-6 lg:px-20 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
-            <div class="lg:col-span-5 pt-10 space-y-10">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-2 h-2 bg-[#ff0022]"></div>
-                        <span class="text-[#ff0022] text-[10px] font-black uppercase tracking-[0.4em]">Metodología Cendae</span>
+    <div class="pointer-events-none absolute inset-0">
+        <div class="absolute right-0 top-0 h-full w-[42%] bg-white"></div>
+        <div class="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-[#e5142d]/40 to-transparent"></div>
+        <div class="absolute -left-40 top-20 h-96 w-96 bg-[#e5142d]/5 blur-3xl"></div>
+        <div class="absolute right-0 bottom-0 h-96 w-[520px] bg-blue-500/5 blur-3xl"></div>
+
+        <div class="absolute inset-0 opacity-[0.04]"
+             style="background-image: linear-gradient(#001A3D 1px, transparent 1px), linear-gradient(90deg, #001A3D 1px, transparent 1px); background-size: 56px 56px;">
+        </div>
+    </div>
+
+    <div class="relative z-10 w-full px-5 sm:px-8 lg:px-16 xl:px-20">
+        <div class="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:items-start">
+
+            <div class="lg:col-span-5">
+                <div class="sticky top-32">
+                    <div class="mb-7 inline-flex items-center gap-4 border border-slate-200 bg-white px-4 py-3 shadow-sm">
+                        <span class="h-2 w-2 bg-[#e5142d]"></span>
+                        <span class="text-[10px] font-black uppercase tracking-[0.38em] text-[#e5142d]">
+                            Metodología CENDAE
+                        </span>
                     </div>
-                    <h2 class="text-5xl lg:text-6xl font-extrabold text-[#00112b] leading-[0.9] tracking-tighter">
-                        Ciencia <br> de alto <span class="text-slate-300">impacto.</span>
+
+                    <h2 class="max-w-xl text-[clamp(3rem,5vw,5.8rem)] font-black leading-[0.86] tracking-[-0.075em] text-[#001A3D]">
+                        Ciencia de datos con enfoque profesional.
                     </h2>
-                </div>
-                
-                <div class="space-y-8">
-                    <div class="flex gap-5 group">
-                        <div class="w-10 h-10 border border-slate-200 flex items-center justify-center group-hover:bg-[#ff0022] group-hover:border-[#ff0022] transition-all duration-300">
-                            <svg class="w-4 h-4 text-[#00112b] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+
+                    <p class="mt-8 max-w-md border-l border-slate-300 pl-6 text-base leading-8 text-slate-500">
+                        Una experiencia formativa diseñada para aprender con método, práctica real y criterio técnico aplicado a escenarios empresariales.
+                    </p>
+
+                    <div class="mt-10 grid max-w-md grid-cols-2 gap-3">
+                        <div class="border border-slate-200 bg-white p-5 shadow-sm">
+                            <span class="block text-3xl font-black tracking-[-0.05em] text-[#001A3D]">01</span>
+                            <p class="mt-2 text-[10px] font-black uppercase tracking-[0.22em] text-slate-400">
+                                Aprende
+                            </p>
                         </div>
-                        <div>
-                            <h4 class="text-[13px] font-bold text-[#00112b] uppercase tracking-wider mb-1">Certificación Institucional</h4>
-                            <p class="text-slate-500 text-[11px] leading-relaxed max-w-xs">Respaldo académico oficial para tu perfil profesional.</p>
+
+                        <div class="border border-slate-200 bg-[#001A3D] p-5 shadow-sm">
+                            <span class="block text-3xl font-black tracking-[-0.05em] text-white">02</span>
+                            <p class="mt-2 text-[10px] font-black uppercase tracking-[0.22em] text-white/40">
+                                Aplica
+                            </p>
                         </div>
                     </div>
 
-                    <div class="flex gap-5 group">
-                        <div class="w-10 h-10 border border-slate-200 flex items-center justify-center group-hover:bg-[#00112b] group-hover:border-[#00112b] transition-all duration-300">
-                            <svg class="w-4 h-4 text-[#00112b] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                        </div>
-                        <div>
-                            <h4 class="text-[13px] font-bold text-[#00112b] uppercase tracking-wider mb-1">Stack Tecnológico Pro</h4>
-                            <p class="text-slate-500 text-[11px] leading-relaxed max-w-xs">Python, Stata y Power BI desde el primer día.</p>
+                    <div class="mt-10 border border-slate-200 bg-white p-6 shadow-[0_24px_70px_-50px_rgba(15,23,42,0.65)]">
+                        <div class="flex items-start gap-4">
+                            <div class="flex h-12 w-12 shrink-0 items-center justify-center bg-[#e5142d] text-white">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"
+                                          d="M12 6v6l4 2"/>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <h4 class="text-lg font-black tracking-[-0.03em] text-[#001A3D]">
+                                    Programas Comunitarios
+                                </h4>
+                                <p class="mt-1 text-sm leading-6 text-slate-500">
+                                    Módulos gratuitos para iniciar en análisis de datos con una base clara.
+                                </p>
+
+                                <a href="javascript:void(0)"
+                                   id="openModalBtn"
+                                   class="group mt-5 inline-flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.28em] text-[#e5142d]">
+                                    Ver cursos
+                                    <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="bg-white p-6 border-l-4 border-[#ff0022] shadow-sm">
-                    <h4 class="text-lg font-bold text-[#00112b] mb-1">Programas Comunitarios</h4>
-                    <p class="text-slate-500 text-[11px] mb-4">Módulos gratuitos de alfabetización de datos.</p>
-                    <a href="javascript:void(0)" id="openModalBtn" class="text-[#ff0022] text-[10px] font-black uppercase tracking-widest flex items-center gap-2 group">
-                        Ver cursos 
-                        <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
                 </div>
             </div>
 
-            <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 lg:pl-10">
-                
-                <div class="bg-white border border-slate-100 p-8 hover:shadow-xl transition-all duration-500 group">
-                    <div class="w-10 h-10 bg-[#ff0022] flex items-center justify-center mb-6">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-black text-[#00112b] mb-3 italic">Tutoría en Vivo.</h3>
-                    <p class="text-slate-400 text-[10px] uppercase tracking-widest font-bold">Dudas resueltas en tiempo real.</p>
-                </div>
+            <div class="lg:col-span-7">
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
 
-                <div class="bg-[#00112b] p-8 shadow-2xl lg:-translate-y-8 transition-transform group">
-                    <div class="flex -space-x-2 mb-6">
-                        <div class="w-8 h-8 bg-white/20 border border-[#00112b]"></div>
-                        <div class="w-8 h-8 bg-white/40 border border-[#00112b]"></div>
-                        <div class="w-8 h-8 bg-white/60 border border-[#00112b]"></div>
-                    </div>
-                    <h3 class="text-2xl font-black text-white mb-3">Comunidad Global.</h3>
-                    <p class="text-white/40 text-[10px] uppercase tracking-widest font-bold">Networking activo.</p>
-                </div>
+                    <article class="group relative min-h-[260px] overflow-hidden border border-slate-200 bg-white p-8 shadow-sm transition duration-500 hover:-translate-y-1 hover:shadow-[0_30px_80px_-55px_rgba(15,23,42,0.8)]">
+                        <div class="absolute right-0 top-0 h-24 w-24 border-r border-t border-[#e5142d]/40"></div>
+                        <div class="mb-10 flex h-12 w-12 items-center justify-center bg-[#e5142d] text-white">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                      d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
 
-                <div class="md:col-span-2 bg-white border border-slate-100 p-8 flex items-center justify-between group hover:border-[#ff0022]/20 transition-colors shadow-sm">
-                    <div class="flex items-center gap-6">
-                        <div class="w-16 h-16 bg-slate-50 flex items-center justify-center group-hover:scale-105 transition-transform">
-                             <svg class="w-8 h-8 text-[#00112b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="text-[10px] font-black uppercase tracking-[0.35em] text-slate-400">
+                            Mentoría
+                        </span>
+                        <h3 class="mt-4 text-3xl font-black leading-none tracking-[-0.05em] text-[#001A3D]">
+                            Tutoría en vivo.
+                        </h3>
+                        <p class="mt-5 text-sm leading-7 text-slate-500">
+                            Acompañamiento directo para resolver dudas, revisar avances y mantener una ruta clara de aprendizaje.
+                        </p>
+                    </article>
+
+                    <article class="group relative min-h-[300px] overflow-hidden bg-[#001A3D] p-8 text-white shadow-[0_35px_90px_-55px_rgba(0,26,61,0.95)] transition duration-500 hover:-translate-y-1 md:-translate-y-8">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(229,20,45,0.28),transparent_34%)]"></div>
+                        <div class="absolute inset-0 opacity-[0.07]"
+                             style="background-image: linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px); background-size: 42px 42px;">
                         </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-[#00112b] tracking-tight">Acceso Vitalicio</h3>
-                            <p class="text-slate-400 text-[10px]">Sin límite de tiempo.</p>
+
+                        <div class="relative">
+                            <div class="mb-10 flex -space-x-3">
+                                <div class="h-10 w-10 border border-white/20 bg-white/15"></div>
+                                <div class="h-10 w-10 border border-white/20 bg-white/30"></div>
+                                <div class="h-10 w-10 border border-white/20 bg-white/45"></div>
+                                <div class="flex h-10 w-10 items-center justify-center border border-white/20 bg-[#e5142d] text-[10px] font-black">
+                                    +
+                                </div>
+                            </div>
+
+                            <span class="text-[10px] font-black uppercase tracking-[0.35em] text-white/35">
+                                Comunidad
+                            </span>
+                            <h3 class="mt-4 text-3xl font-black leading-none tracking-[-0.05em]">
+                                Red profesional.
+                            </h3>
+                            <p class="mt-5 text-sm leading-7 text-white/55">
+                                Conecta con estudiantes, profesionales y personas que buscan crecer usando datos.
+                            </p>
                         </div>
-                    </div>
-                    <div class="hidden md:block text-right">
-                        <span class="text-[9px] font-black text-[#ff0022] uppercase tracking-[0.4em]">Soporte 24/7</span>
-                    </div>
+                    </article>
+
+                    <article class="group relative overflow-hidden border border-slate-200 bg-white p-8 shadow-sm transition duration-500 hover:border-[#e5142d]/30 md:col-span-2">
+                        <div class="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+                            <div class="flex items-start gap-6">
+                                <div class="flex h-16 w-16 shrink-0 items-center justify-center bg-slate-50 text-[#001A3D] transition duration-500 group-hover:bg-[#001A3D] group-hover:text-white">
+                                    <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+
+                                <div>
+                                    <span class="text-[10px] font-black uppercase tracking-[0.35em] text-[#e5142d]">
+                                        Acceso
+                                    </span>
+                                    <h3 class="mt-3 text-3xl font-black tracking-[-0.05em] text-[#001A3D]">
+                                        Material disponible sin límite de tiempo.
+                                    </h3>
+                                    <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-500">
+                                        Revisa clases, recursos y contenidos cuando lo necesites para reforzar tu avance profesional.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="border-l border-slate-200 pl-8 text-right">
+                                <span class="block text-5xl font-black tracking-[-0.08em] text-[#001A3D]">24/7</span>
+                                <span class="mt-2 block text-[10px] font-black uppercase tracking-[0.35em] text-slate-400">
+                                    Soporte
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="border border-slate-200 bg-[#0f172a] p-8 text-white">
+                        <span class="text-[10px] font-black uppercase tracking-[0.35em] text-[#e5142d]">
+                            Certificación
+                        </span>
+                        <h3 class="mt-4 text-2xl font-black tracking-[-0.04em]">
+                            Respaldo institucional.
+                        </h3>
+                        <p class="mt-4 text-sm leading-7 text-white/55">
+                            Evidencia formal para fortalecer tu perfil académico y profesional.
+                        </p>
+                    </article>
+
+                    <article class="border border-slate-200 bg-white p-8">
+                        <span class="text-[10px] font-black uppercase tracking-[0.35em] text-[#e5142d]">
+                            Stack
+                        </span>
+                        <h3 class="mt-4 text-2xl font-black tracking-[-0.04em] text-[#001A3D]">
+                            Herramientas profesionales.
+                        </h3>
+                        <p class="mt-4 text-sm leading-7 text-slate-500">
+                            Python, Stata y Power BI aplicados desde ejercicios prácticos.
+                        </p>
+                    </article>
+
                 </div>
             </div>
 
